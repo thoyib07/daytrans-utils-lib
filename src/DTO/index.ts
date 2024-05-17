@@ -1,2 +1,2 @@
-export * from './req/shuttle'
-export * from './res/shuttle'
+export * from './req/V2/shuttle'
+export * from './res/V2/shuttle'
