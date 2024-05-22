@@ -1,11 +1,11 @@
-export interface reqAppShuttleGetAllOrderV2 {
+export interface reqAppShuttleGetAllOrderV3 {
     page: number;
     limit: number;
     typeTrip: string;
     orderId: string;
 }
 
-export interface reqAppShuttleCreateOrderV2 {
+export interface reqAppShuttleCreateOrderV3 {
     tokenData: string;
     paymentMethod: string;
     typeOrder: string;
@@ -16,16 +16,16 @@ export interface reqAppShuttleCreateOrderV2 {
     isWallet?: boolean;
 }
 
-export interface reqAppShuttleReorderV2 {
+export interface reqAppShuttleReorderV3 {
     orderId: string;
     departureDate: string;
 
     returnDate?: string;
 }
 
-export interface reqAppShuttleCheckPriceV2 {
-    userBooking: reqAppShuttleCheckPriceUserBookingV2;
-    orderData: reqAppShuttleCheckPriceOrderDataV2[];
+export interface reqAppShuttleCheckPriceV3 {
+    userBooking: reqAppShuttleCheckPriceUserBookingV3;
+    orderData: reqAppShuttleCheckPriceOrderDataV3[];
     typeOrder: string;
     isInsurance: boolean;
 
@@ -36,14 +36,14 @@ export interface reqAppShuttleCheckPriceV2 {
     tokenData?: string;
 }
 
-export interface reqAppShuttleCheckPriceUserBookingV2 {
+export interface reqAppShuttleCheckPriceUserBookingV3 {
     name: string;
     title: string;
     phone: string;
     email: string;
 }
 
-export interface reqAppShuttleCheckPriceOrderDataV2 {
+export interface reqAppShuttleCheckPriceOrderDataV3 {
     typeTrip: string;
     departureDate: string;
     departureTime: string;
@@ -55,14 +55,14 @@ export interface reqAppShuttleCheckPriceOrderDataV2 {
     destinationCounter: string;
     destinationCity: string;
     scheduleCode: string;
-    traveler: reqAppShuttleCheckPriceTravelerV2[];
+    traveler: reqAppShuttleCheckPriceTravelerV3[];
     totalPriceTraveler: number;
 
     totalPriceTravelerPrev?: number;
     totalPriceInsurance?: number;
 }
 
-export interface reqAppShuttleCheckPriceTravelerV2 {
+export interface reqAppShuttleCheckPriceTravelerV3 {
     name: string;
     title: string;
     idLayout: string;
@@ -76,20 +76,20 @@ export interface reqAppShuttleCheckPriceTravelerV2 {
     promoCode?: string;
 }
 
-export interface reqAppTravelokaCheckPriceV2 {
-    orderData: reqAppTravelokaCheckPriceOrderDataV2[];
-    userBooking: reqAppTravelokaCheckPriceUserBookingV2;
+export interface reqAppTravelokaCheckPriceV3 {
+    orderData: reqAppTravelokaCheckPriceOrderDataV3[];
+    userBooking: reqAppTravelokaCheckPriceUserBookingV3;
     typeOrder: string;
 }
 
-export interface reqAppTravelokaCheckPriceUserBookingV2 {
+export interface reqAppTravelokaCheckPriceUserBookingV3 {
     name: string;
     title: string;
     phone: string;
     email: string;
 }
 
-export interface reqAppTravelokaCheckPriceOrderDataV2 {
+export interface reqAppTravelokaCheckPriceOrderDataV3 {
     departureDate: string;
     departureTime: string;
     departureCounterId: string;
@@ -107,11 +107,11 @@ export interface reqAppTravelokaCheckPriceOrderDataV2 {
     busTripCode: null;
     seatClass: string;
     seatSubclass: string;
-    traveler: reqAppTravelokaCheckPriceTravelerV2[];
+    traveler: reqAppTravelokaCheckPriceTravelerV3[];
     totalPriceTraveler: number;
 }
 
-export interface reqAppTravelokaCheckPriceTravelerV2 {
+export interface reqAppTravelokaCheckPriceTravelerV3 {
     name: string;
     title: string;
     idLayout: string;
@@ -123,9 +123,9 @@ export interface reqAppTravelokaCheckPriceTravelerV2 {
     promoCode: string;
 }
 
-export interface reqAppTiketuxCheckPriceV2 {
-    userBooking: reqAppTiketuxCheckPriceUserBookingV2;
-    orderData: reqAppTiketuxCheckPriceOrderDataV2[];
+export interface reqAppTiketuxCheckPriceV3 {
+    userBooking: reqAppTiketuxCheckPriceUserBookingV3;
+    orderData: reqAppTiketuxCheckPriceOrderDataV3[];
 
     isInsurance?: boolean;
     isReturn?: boolean;
@@ -135,14 +135,14 @@ export interface reqAppTiketuxCheckPriceV2 {
     tokenData?: string;
 }
 
-export interface reqAppTiketuxCheckPriceUserBookingV2 {
+export interface reqAppTiketuxCheckPriceUserBookingV3 {
     name: string;
     title: string;
     phone: string;
     email: string;
 }
 
-export interface reqAppTiketuxCheckPriceOrderDataV2 {
+export interface reqAppTiketuxCheckPriceOrderDataV3 {
     departureDate: string;
     departureTime: string;
     estimatedTravelTime: number;
@@ -153,14 +153,14 @@ export interface reqAppTiketuxCheckPriceOrderDataV2 {
     destinationCounter: string;
     destinationCity: string;
     scheduleCode: string;
-    traveler: reqAppTiketuxCheckPriceTravelerV2[];
+    traveler: reqAppTiketuxCheckPriceTravelerV3[];
 
     totalPriceTraveler?: number;
     totalPriceTravelerPrev?: number;
     totalPriceInsurance?: number;
 }
 
-export interface reqAppTiketuxCheckPriceTravelerV2 {
+export interface reqAppTiketuxCheckPriceTravelerV3 {
     name: string;
     title: string;
     idLayout: string;
@@ -173,18 +173,18 @@ export interface reqAppTiketuxCheckPriceTravelerV2 {
     priceInsurance?: number;
 }
 
-export interface reqAppAsalTiketuxV2 {
+export interface reqAppAsalTiketuxV3 {
     search: string;
     lat: string;
     long: string;
 }
 
-export interface reqAppTujuanTiketuxV2 {
+export interface reqAppTujuanTiketuxV3 {
     departureCounter: string;
     isTraveloka: boolean;
 }
 
-export interface reqAppJadwalTiketuxV2 {
+export interface reqAppJadwalTiketuxV3 {
     departureDate: string;
     departureCounter: string;
     destinationCounter: string;
@@ -199,7 +199,7 @@ export interface reqAppJadwalTiketuxV2 {
     destinationCounterReturn?: string;
 }
 
-export interface reqAppKursiTiketuxV2 {
+export interface reqAppKursiTiketuxV3 {
     scheduleCode: string;
     departureDate: string;
     departureCounter: string;

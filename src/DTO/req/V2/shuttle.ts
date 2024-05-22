@@ -1,8 +1,19 @@
+export interface reqAppShuttleGetDetailOrderV2 {
+    orderId: string;
+}
+
 export interface reqAppShuttleGetAllOrderV2 {
     page: number;
     limit: number;
     typeTrip: string;
     orderId: string;
+}
+
+export interface reqAppShuttleReorderV2 {
+    orderId: string;
+    departureDate: string;
+
+    returnDate?: string;
 }
 
 export interface reqAppShuttleCreateOrderV2 {
@@ -16,40 +27,33 @@ export interface reqAppShuttleCreateOrderV2 {
     isWallet?: boolean;
 }
 
-export interface reqAppShuttleReorderV2 {
-    orderId: string;
-    departureDate: string;
-
-    returnDate?: string;
-}
-
 export interface reqAppShuttleCheckPriceV2 {
     userBooking: reqAppShuttleCheckPriceUserBookingV2;
     orderData: reqAppShuttleCheckPriceOrderDataV2[];
     typeOrder: string;
-    isInsurance: boolean;
+    isasuransi: boolean;
 
-    isConnecting?: boolean;
-    isReturn?: boolean;
+    isconnecting?: boolean;
+    ispp?: boolean;
     totalPrice?: number;
     totalInsurance?: number;
-    tokenData?: string;
 }
 
 export interface reqAppShuttleCheckPriceUserBookingV2 {
-    name: string;
+    nama: string;
     title: string;
     phone: string;
     email: string;
 }
 
 export interface reqAppShuttleCheckPriceOrderDataV2 {
-    typeTrip: string;
+    // typeTrip: string;
     departureDate: string;
     departureTime: string;
     departureCounterId: string;
     departureCounter: string;
     departureCity: string;
+
     estimatedTravelTime: number;
     destinationCounterId: string;
     destinationCounter: string;
@@ -65,7 +69,7 @@ export interface reqAppShuttleCheckPriceOrderDataV2 {
 export interface reqAppShuttleCheckPriceTravelerV2 {
     name: string;
     title: string;
-    idLayout: string;
+    id_layout: string;
     seatNumber: string;
     price: number;
     priceNormal: number;
@@ -73,7 +77,7 @@ export interface reqAppShuttleCheckPriceTravelerV2 {
 
     passengerIdentity?: string;
     priceInsurance?: number;
-    promoCode?: string;
+    kodePromo?: string;
 }
 
 export interface reqAppTravelokaCheckPriceV2 {
@@ -83,7 +87,7 @@ export interface reqAppTravelokaCheckPriceV2 {
 }
 
 export interface reqAppTravelokaCheckPriceUserBookingV2 {
-    name: string;
+    nama: string;
     title: string;
     phone: string;
     email: string;
@@ -95,11 +99,13 @@ export interface reqAppTravelokaCheckPriceOrderDataV2 {
     departureCounterId: string;
     departureCounter: string;
     departureCity: string;
+
     arrivalDate: string;
     arrivalTime: string;
     arrivalCounterId: string;
     arrivalCounter: string;
     arrivalCity: string;
+
     routeId: string;
     skuId: string;
     providerId: string;
@@ -114,43 +120,47 @@ export interface reqAppTravelokaCheckPriceOrderDataV2 {
 export interface reqAppTravelokaCheckPriceTravelerV2 {
     name: string;
     title: string;
-    idLayout: string;
+    id_layout: string;
     seatNumber: string;
     passengerIdentity: string;
     price: number;
     priceNormal: number;
     pricePromo: number;
-    promoCode: string;
+    kodePromo: string;
 }
 
 export interface reqAppTiketuxCheckPriceV2 {
     userBooking: reqAppTiketuxCheckPriceUserBookingV2;
     orderData: reqAppTiketuxCheckPriceOrderDataV2[];
+    typeOrder: string;
 
-    isInsurance?: boolean;
-    isReturn?: boolean;
-    isConnecting?: boolean;
+    isasuransi?: boolean;
+    ispp?: boolean;
+    isconnecting?: boolean;
     totalPrice?: number;
     totalInsurance?: number;
     tokenData?: string;
 }
 
 export interface reqAppTiketuxCheckPriceUserBookingV2 {
-    name: string;
+    nama: string;
     title: string;
     phone: string;
     email: string;
 }
 
 export interface reqAppTiketuxCheckPriceOrderDataV2 {
+    typeTrip: string;
     departureDate: string;
     departureTime: string;
-    estimatedTravelTime: number;
     departureCounter: string;
     departureCounterId: string;
     departureCity: string;
-    destinationCounterId: string;
+
+    estimatedTravelTime: number;
+
     destinationCounter: string;
+    destinationCounterId: string;
     destinationCity: string;
     scheduleCode: string;
     traveler: reqAppTiketuxCheckPriceTravelerV2[];
@@ -163,54 +173,57 @@ export interface reqAppTiketuxCheckPriceOrderDataV2 {
 export interface reqAppTiketuxCheckPriceTravelerV2 {
     name: string;
     title: string;
-    idLayout: string;
+    id_layout: string;
     seatNumber: string;
     promoCode: string;
 
+    passengerIdentity?: string;
     price?: number;
     priceNormal?: number;
     pricePromo?: number;
     priceInsurance?: number;
+    kodePromo?: string;
 }
 
-export interface reqAppAsalTiketuxV2 {
+export interface reqAppTiketuxAsalV2 {
     search: string;
     lat: string;
     long: string;
 }
 
-export interface reqAppTujuanTiketuxV2 {
-    departureCounter: string;
+export interface reqAppTiketuxTujuanV2 {
+    asal: string;
     isTraveloka: boolean;
+    search?: string;
 }
 
-export interface reqAppJadwalTiketuxV2 {
-    departureDate: string;
-    departureCounter: string;
-    destinationCounter: string;
-    qty: number;
-    isReturn: boolean;
+export interface reqAppTiketuxJadwalV2 {
+    tgl_berangkat: string;
+    asal: string;
+    tujuan: string;
+    jumlahpenumpang: number;
 
+    ispp?: boolean;
     isTraveloka?: boolean;
-    searchDeparture?: string;
-    searchDestination?: string;
-    departureDateReturn?: string;
-    departureCounterReturn?: string;
-    destinationCounterReturn?: string;
+    search_asal?: string;
+    search_tujuan?: string;
+    tgl_berangkat_pp?: string;
+    asal_pp?: string;
+    tujuan_pp?: string;
 }
 
 export interface reqAppKursiTiketuxV2 {
-    scheduleCode: string;
-    departureDate: string;
-    departureCounter: string;
-    destinationCounter: string;
+    kode_jadwal: string;
+    tgl_berangkat: string;
+    asal: string;
+    tujuan: string;
 
-    isInsurance?: boolean;
-    isReturn?: boolean;
-    isConnecting?: boolean;
+    isasuransi?: boolean;
+    ispp?: boolean;
+    isconnecting?: boolean;
     isTraveloka?: boolean;
-    scheduleCodeReturn?: string;
-    departureDateReturn?: string;
-    departureCounterReturn?: string;
-    destinationCounterReturn?: string;
+    kode_jadwal_pp?: string;
+    tgl_berangkat_pp?: string;
+    asal_pp?: string;
+    tujuan_pp?: string;
 }

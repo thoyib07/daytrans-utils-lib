@@ -1,9 +1,9 @@
-export interface resAppTiketuxAsalTujuanV2 {
-    outlet: resAppTiketuxAsalTujuanOutletV2[];
-    kota: resAppTiketuxAsalTujuanKotaV2[];
+export interface resAppTiketuxAsalTujuanV3 {
+    outlet: resAppTiketuxAsalTujuanOutletV3[];
+    kota: resAppTiketuxAsalTujuanKotaV3[];
 }
 
-export interface resAppTiketuxAsalTujuanKotaV2 {
+export interface resAppTiketuxAsalTujuanKotaV3 {
     nama: string;
     kode: string;
 
@@ -12,7 +12,7 @@ export interface resAppTiketuxAsalTujuanKotaV2 {
     img?: string;
 }
 
-export interface resAppTiketuxAsalTujuanOutletV2 {
+export interface resAppTiketuxAsalTujuanOutletV3 {
     id: string;
     group: string;
     kode: string;
@@ -41,13 +41,13 @@ export interface resAppTiketuxAsalTujuanOutletV2 {
     distance?: number;
 }
 
-export interface resAppTiketuxJadwalV2 {
-    schedule: resAppTiketuxJadwalScheduleV2[];
+export interface resAppTiketuxJadwalV3 {
+    schedule: resAppTiketuxJadwalScheduleV3[];
     departureCounter: string[];
     destinationCounter: string[];
 }
 
-export interface resAppTiketuxJadwalScheduleV2 {
+export interface resAppTiketuxJadwalScheduleV3 {
     id_produk: string;
     kode_produk: string;
     rute: string;
@@ -78,7 +78,7 @@ export interface resAppTiketuxJadwalScheduleV2 {
     min_tarif_disc: number;
     max_tarif_disc: number;
     biaya_addon_mutasi: number;
-    promo: resAppTiketuxJadwalPromoV2[];
+    promo: resAppTiketuxJadwalPromoV3[];
     jumlah_kursi: number;
     sisa_kursi: number;
     kursi_terisi: number;
@@ -90,10 +90,10 @@ export interface resAppTiketuxJadwalScheduleV2 {
     is_pilih_kursi: number;
     show_area_antar_jemput: number;
     is_transit: number;
-    list_transit: resAppTiketuxJadwalListTransitV2[];
+    list_transit: resAppTiketuxJadwalListTransitV3[];
     is_connecting: number;
     list_connecting: any[];
-    list_transit_connecting: resAppTiketuxJadwalListTransitConnectingV2[];
+    list_transit_connecting: resAppTiketuxJadwalListTransitConnectingV3[];
     operator: string;
     detail_rute: string;
     harga_tiket: number;
@@ -102,7 +102,7 @@ export interface resAppTiketuxJadwalScheduleV2 {
     is_sold: boolean;
 }
 
-export interface resAppTiketuxJadwalListTransitConnectingV2 {
+export interface resAppTiketuxJadwalListTransitConnectingV3 {
     tgl_berangkat: string;
     jam_berangkat: string;
     id_produk: string;
@@ -115,20 +115,20 @@ export interface resAppTiketuxJadwalListTransitConnectingV2 {
     waktu_tunggu: number;
 }
 
-export interface resAppTiketuxJadwalListTransitV2 {
+export interface resAppTiketuxJadwalListTransitV3 {
     nama: string;
     ewt_menit: number;
     jam: string;
 }
 
-export interface resAppTiketuxJadwalPromoV2 {
+export interface resAppTiketuxJadwalPromoV3 {
     kode_promo: string;
     nama_promo: string;
     nominal: number;
     kursi: string;
 }
 
-export interface resAppTiketuxKursiV2 {
+export interface resAppTiketuxKursiV3 {
     totalpenumpang: string;
     metodepenjualan: string | null;
     totalkuota: string | null;
@@ -148,8 +148,8 @@ export interface resAppTiketuxKursiV2 {
     kapasitas_pp: string;
     petalayout_pp: any;
     asuransi: number | null;
-    peta_layout: resAppTiketuxKursiPetaLayoutV2[];
-    peta_layout_pp: resAppTiketuxKursiPetaLayoutV2[];
+    peta_layout: resAppTiketuxKursiPetaLayoutV3[];
+    peta_layout_pp: resAppTiketuxKursiPetaLayoutV3[];
     isjemput: string;
     jemputminfree: string;
     jemputbiayadalamarea: string;
@@ -169,7 +169,7 @@ export interface resAppTiketuxKursiV2 {
     nama_driver: string | null;
 }
 
-export interface resAppTiketuxKursiPetaLayoutV2 {
+export interface resAppTiketuxKursiPetaLayoutV3 {
     status: string;
     label: string;
     tglberangkat: string;
@@ -200,9 +200,9 @@ export interface resAppTiketuxKursiPetaLayoutV2 {
     kodejadwal: string;
 }
 
-export interface resAppTiketuxCheckPriceV2 {
-    userBooking: resAppTiketuxCheckPriceUserBookingV2;
-    orderData: resAppTiketuxCheckPriceOrderDataV2[];
+export interface resAppTiketuxCheckPriceV3 {
+    userBooking: resAppTiketuxCheckPriceUserBookingV3;
+    orderData: resAppTiketuxCheckPriceOrderDataV3[];
 
     isInsurance?: boolean;
     isReturn?: boolean;
@@ -212,14 +212,14 @@ export interface resAppTiketuxCheckPriceV2 {
     tokenData?: string;
 }
 
-export interface resAppTiketuxCheckPriceUserBookingV2 {
+export interface resAppTiketuxCheckPriceUserBookingV3 {
     name: string;
     title: string;
     phone: string;
     email: string;
 }
 
-export interface resAppTiketuxCheckPriceOrderDataV2 {
+export interface resAppTiketuxCheckPriceOrderDataV3 {
     departureDate: string;
     departureTime: string;
     estimatedTravelTime: number;
@@ -230,7 +230,7 @@ export interface resAppTiketuxCheckPriceOrderDataV2 {
     departureCity: string;
     destinationCity: string;
     scheduleCode: string;
-    traveler: resAppTiketuxCheckPriceTravelerV2[];
+    traveler: resAppTiketuxCheckPriceTravelerV3[];
 
     isInsurance?: boolean;
     isReturn?: boolean;
@@ -240,7 +240,7 @@ export interface resAppTiketuxCheckPriceOrderDataV2 {
     totalPriceInsurance?: number;
 }
 
-export interface resAppTiketuxCheckPriceTravelerV2 {
+export interface resAppTiketuxCheckPriceTravelerV3 {
     name: string;
     title: string;
     idLayout: string;
@@ -252,12 +252,12 @@ export interface resAppTiketuxCheckPriceTravelerV2 {
     priceInsurance: number;
 }
 
-export interface resAppShuttleOrderV2 {
-    orderData: resAppShuttleOrderOrderDataV2[];
-    payment: resAppShuttleOrderPaymentV2;
+export interface resAppShuttleOrderV3 {
+    orderData: resAppShuttleOrderOrderDataV3[];
+    payment: resAppShuttleOrderPaymentV3;
 }
 
-export interface resAppShuttleOrderPaymentV2 {
+export interface resAppShuttleOrderPaymentV3 {
     customerId: number;
     orderId: string;
     invoiceNo: string;
@@ -277,7 +277,7 @@ export interface resAppShuttleOrderPaymentV2 {
     bookingStatus: any[];
 }
 
-export interface resAppShuttleOrderOrderDataV2 {
+export interface resAppShuttleOrderOrderDataV3 {
     customerId: number;
     orderId: string;
     bookingName: string;
@@ -299,7 +299,7 @@ export interface resAppShuttleOrderOrderDataV2 {
     totalAmount: number;
     totalInsurance: number;
     typeTrip: string;
-    traveler: resAppShuttleOrderTravelerV2[];
+    traveler: resAppShuttleOrderTravelerV3[];
     cashbackPoint: number;
     useCashback: boolean;
     typeOrder: string;
@@ -307,7 +307,7 @@ export interface resAppShuttleOrderOrderDataV2 {
     platform: string;
 }
 
-export interface resAppShuttleOrderTravelerV2 {
+export interface resAppShuttleOrderTravelerV3 {
     orderId: number;
     scheduleCode: string;
     name: string;
