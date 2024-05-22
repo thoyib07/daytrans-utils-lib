@@ -28,10 +28,10 @@ export interface reqAppShuttleCheckPriceV3 {
     orderData: reqAppShuttleCheckPriceOrderDataV3[];
     typeOrder: string;
     isInsurance: boolean;
+    totalPrice: number | 0;
 
     isConnecting?: boolean;
     isReturn?: boolean;
-    totalPrice?: number;
     totalInsurance?: number;
     tokenData?: string;
 }

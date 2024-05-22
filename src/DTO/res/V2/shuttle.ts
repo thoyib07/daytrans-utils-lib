@@ -203,13 +203,13 @@ export interface resAppTiketuxKursiPetaLayoutV2 {
 export interface resAppTiketuxCheckPriceV2 {
     userBooking: resAppTiketuxCheckPriceUserBookingV2;
     orderData: resAppTiketuxCheckPriceOrderDataV2[];
+    totalInsurance: number;
+    totalPrice: number;
+    tokenData: string;
 
     isInsurance?: boolean;
     isReturn?: boolean;
     isConnecting?: boolean;
-    totalInsurance?: number;
-    totalPrice?: number;
-    tokenData?: string;
 }
 
 export interface resAppTiketuxCheckPriceUserBookingV2 {
@@ -245,11 +245,12 @@ export interface resAppTiketuxCheckPriceTravelerV2 {
     title: string;
     idLayout: string;
     seatNumber: string;
-    promoCode: string;
     price: number;
     priceNormal: number;
     pricePromo: number;
-    priceInsurance: number;
+    
+    promoCode?: string;
+    priceInsurance?: number;
 }
 
 export interface resAppShuttleOrderV2 {
