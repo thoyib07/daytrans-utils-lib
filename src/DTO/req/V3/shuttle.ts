@@ -65,7 +65,7 @@ export interface reqAppShuttleCheckPriceOrderDataV3 {
 export interface reqAppShuttleCheckPriceTravelerV3 {
     name: string;
     title: string;
-    idLayout: string;
+    idLayout?: string | "";
     seatNumber: string;
     price: number;
     priceNormal: number;
@@ -114,18 +114,21 @@ export interface reqAppTravelokaCheckPriceOrderDataV3 {
 export interface reqAppTravelokaCheckPriceTravelerV3 {
     name: string;
     title: string;
-    idLayout: string;
+    idLayout?: string | "";
     seatNumber: string;
     passengerIdentity: string;
     price: number;
     priceNormal: number;
     pricePromo: number;
-    promoCode: string;
+    
+    promoCode?: string;
+    priceInsurance?: number;
 }
 
 export interface reqAppTiketuxCheckPriceV3 {
     userBooking: reqAppTiketuxCheckPriceUserBookingV3;
     orderData: reqAppTiketuxCheckPriceOrderDataV3[];
+    typeOrder: string;
 
     isInsurance?: boolean;
     isReturn?: boolean;
@@ -145,16 +148,16 @@ export interface reqAppTiketuxCheckPriceUserBookingV3 {
 export interface reqAppTiketuxCheckPriceOrderDataV3 {
     departureDate: string;
     departureTime: string;
-    estimatedTravelTime: number;
     departureCounter: string;
     departureCounterId: string;
     departureCity: string;
     destinationCounterId: string;
     destinationCounter: string;
     destinationCity: string;
+    estimatedTravelTime: number;
     scheduleCode: string;
     traveler: reqAppTiketuxCheckPriceTravelerV3[];
-
+    
     totalPriceTraveler?: number;
     totalPriceTravelerPrev?: number;
     totalPriceInsurance?: number;
@@ -163,10 +166,10 @@ export interface reqAppTiketuxCheckPriceOrderDataV3 {
 export interface reqAppTiketuxCheckPriceTravelerV3 {
     name: string;
     title: string;
-    idLayout: string;
+    idLayout?: string | "";
     seatNumber: string;
-    promoCode: string;
-
+    
+    promoCode?: string;
     price?: number;
     priceNormal?: number;
     pricePromo?: number;
