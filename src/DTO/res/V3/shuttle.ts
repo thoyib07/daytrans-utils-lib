@@ -208,9 +208,9 @@ export interface resAppTiketuxCheckPriceV3 {
     tokenData: string;
     typeOrder: string;
 
-    isInsurance?: boolean;
-    isReturn?: boolean;
-    isConnecting?: boolean;
+    isInsurance: boolean;
+    isReturn: boolean;
+    isConnecting: boolean;
 }
 
 export interface resAppTiketuxCheckPriceUserBookingV3 {

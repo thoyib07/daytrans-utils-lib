@@ -10,6 +10,9 @@ export interface reqAppShuttleCreateOrderV3 {
     paymentMethod: string;
     typeOrder: string;
     useCashback: boolean;
+    isInsurance: boolean;
+    isConnecting: boolean;
+    isReturn: boolean;
 
     voucherCode?: string;
     voucherEventCode?: string;
@@ -27,11 +30,11 @@ export interface reqAppShuttleCheckPriceV3 {
     userBooking: reqAppShuttleCheckPriceUserBookingV3;
     orderData: reqAppShuttleCheckPriceOrderDataV3[];
     typeOrder: string;
-    isInsurance: boolean;
     totalPrice: number | 0;
+    isInsurance: boolean;
 
-    isConnecting?: boolean;
-    isReturn?: boolean;
+    isConnecting: boolean;
+    isReturn: boolean;
     totalInsurance?: number;
     tokenData?: string;
 }
@@ -130,9 +133,9 @@ export interface reqAppTiketuxCheckPriceV3 {
     orderData: reqAppTiketuxCheckPriceOrderDataV3[];
     typeOrder: string;
 
-    isInsurance?: boolean;
-    isReturn?: boolean;
-    isConnecting?: boolean;
+    isInsurance: boolean;
+    isReturn: boolean;
+    isConnecting: boolean;
     totalPrice?: number;
     totalInsurance?: number;
     tokenData?: string;
