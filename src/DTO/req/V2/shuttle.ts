@@ -80,20 +80,20 @@ export interface reqAppShuttleCheckPriceTravelerV2 {
     kodePromo?: string;
 }
 
-export interface reqAppTravelokaCheckPriceV2 {
-    orderData: reqAppTravelokaCheckPriceOrderDataV2[];
-    userBooking: reqAppTravelokaCheckPriceUserBookingV2;
+export interface reqAppShuttleCheckPriceTravelokaV2 {
+    orderData: reqAppShuttleCheckPriceTravelokaOrderDataV2[];
+    userBooking: reqAppShuttleCheckPriceTravelokaUserBookingV2;
     typeOrder: string;
 }
 
-export interface reqAppTravelokaCheckPriceUserBookingV2 {
+export interface reqAppShuttleCheckPriceTravelokaUserBookingV2 {
     nama: string;
     title: string;
     phone: string;
     email: string;
 }
 
-export interface reqAppTravelokaCheckPriceOrderDataV2 {
+export interface reqAppShuttleCheckPriceTravelokaOrderDataV2 {
     departureDate: string;
     departureTime: string;
     departureCounterId: string;
@@ -113,11 +113,11 @@ export interface reqAppTravelokaCheckPriceOrderDataV2 {
     busTripCode: null;
     seatClass: string;
     seatSubclass: string;
-    traveler: reqAppTravelokaCheckPriceTravelerV2[];
+    traveler: reqAppShuttleCheckPriceTravelokaTravelerV2[];
     totalPriceTraveler: number;
 }
 
-export interface reqAppTravelokaCheckPriceTravelerV2 {
+export interface reqAppShuttleCheckPriceTravelokaTravelerV2 {
     name: string;
     title: string;
     id_layout: string;
@@ -212,7 +212,7 @@ export interface reqAppTiketuxJadwalV2 {
     tujuan_pp?: string;
 }
 
-export interface reqAppKursiTiketuxV2 {
+export interface reqAppTiketuxKursiV2 {
     kode_jadwal: string;
     tgl_berangkat: string;
     asal: string;
@@ -226,4 +226,9 @@ export interface reqAppKursiTiketuxV2 {
     tgl_berangkat_pp?: string;
     asal_pp?: string;
     tujuan_pp?: string;
+}
+export interface reqAppTravelokaCityV2 {
+    limit: number,
+    page: number,
+    search: string
 }

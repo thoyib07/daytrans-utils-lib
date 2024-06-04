@@ -323,3 +323,56 @@ export interface resAppShuttleOrderTravelerV3 {
     insured: boolean;
     priceInsurance: number;
 }
+
+export interface resAppShuttleCheckPriceV3 {
+    userBooking: resAppShuttleCheckPriceUserBookingV3;
+    orderData: resAppShuttleCheckPriceOrderDataV3[];
+    totalInsurance: number;
+    totalPrice: number;
+    tokenData: string;
+    typeOrder: string;
+
+    isInsurance: boolean;
+    isReturn: boolean;
+    isConnecting: boolean;
+}
+
+export interface resAppShuttleCheckPriceUserBookingV3 {
+    name: string;
+    title: string;
+    phone: string;
+    email: string;
+}
+
+export interface resAppShuttleCheckPriceOrderDataV3 {
+    departureDate: string;
+    departureTime: string;
+    estimatedTravelTime: number;
+    departureCounterId: string;
+    departureCounter: string;
+    destinationCounterId: string;
+    destinationCounter: string;
+    departureCity: string;
+    destinationCity: string;
+    scheduleCode: string;
+    traveler: resAppShuttleCheckPriceTravelerV3[];
+
+    isInsurance?: boolean;
+    isReturn?: boolean;
+    isConnecting?: boolean;
+    totalPriceTraveler?: number;
+    totalPriceTravelerPrev?: number;
+    totalPriceInsurance?: number;
+}
+
+export interface resAppShuttleCheckPriceTravelerV3 {
+    name: string;
+    title: string;
+    idLayout?: string | "";
+    seatNumber: string;
+
+    price?: number;
+    priceNormal?: number;
+    pricePromo?: number;
+    priceInsurance?: number;
+}
