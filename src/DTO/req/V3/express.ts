@@ -1,5 +1,5 @@
 export interface reqAppKuyRegionKotaV3 {
-  provinsiId?: string;
+  provinceId?: string;
 }
 export interface reqAppKuyRegionKecamatanV3 {
   cityId?: string;
@@ -8,7 +8,7 @@ export interface reqAppKuyRegionKelurahanV3 {
   districtId?: string;
 }
 export interface reqAppKuyFindKelurahanV3 {
-  provinsiName?: string;
+  provinceName?: string;
   cityName: string;
   districtName: string;
   subdistrictName?: string;
