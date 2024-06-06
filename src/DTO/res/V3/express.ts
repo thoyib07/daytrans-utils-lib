@@ -101,11 +101,11 @@ export interface resAppKuyInvoiceDetailV3 {
     jenis_pembayaran: string;
     status_pesanan: string;
     waktu_pemesanan: string;
+    biaya_jemput: number;
+    total_tarif: number;
     pengirim: resAppKuyInvoiceDetailPengirimV3;
     penerima_list: resAppKuyInvoiceDetailPenerimaListV3[];
-    biaya_jemput: number;
     biaya_pengiriman_list: resAppKuyInvoiceDetailBiayaPengirimanListV3[];
-    total_tarif: number;
     payment: resAppKuyInvoiceDetailPaymentV3;
   };
 }

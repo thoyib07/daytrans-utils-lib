@@ -1,4 +1,4 @@
-export interface reqAppKuyRegioncityV3 {
+export interface reqAppKuyRegionKotaV3 {
   provinsiId?: string;
 }
 export interface reqAppKuyRegionKecamatanV3 {
