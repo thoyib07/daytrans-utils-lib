@@ -1,113 +1,152 @@
 export interface resAppKuyRegionProvinsiV2 {
-  provinsi_list: {
-    provinsi_id: number;
-    provinsi_nama: string;
-  }[];
+  results: {
+    provinsi_list: {
+      provinsi_id: number;
+      provinsi_nama: string;
+    }[];
+  };
+  status: string;
 }
 export interface resAppKuyRegionKotaV2 {
-  kota_list: {
-    kota_id: number;
-    kota_nama: string;
-    provinsi_nama: string;
-  }[];
+  results: {
+    kota_list: {
+      kota_id: number;
+      kota_nama: string;
+      provinsi_nama: string;
+    }[];
+  };
+  status: string;
 }
 export interface resAppKuyRegionKecamatanV2 {
-  kecamatan_list: {
-    kecamatan_id: number;
-    kecamatan_nama: string;
-    kota_nama: string;
-    provinsi_nama: string;
-  }[];
+  results: {
+    kecamatan_list: {
+      kecamatan_id: number;
+      kecamatan_nama: string;
+      kota_nama: string;
+      provinsi_nama: string;
+    }[];
+  };
+  status: string;
 }
 export interface resAppKuyRegionKelurahanV2 {
-  kelurahan_list: {
-    kelurahan_id: number;
-    kelurahan_kode_pos: string;
-    kelurahan_nama: string;
-    kecamatan_nama: string;
-    kota_nama: string;
-    provinsi_nama: string;
-  }[];
+  results: {
+    kelurahan_list: {
+      kelurahan_id: number;
+      kelurahan_kode_pos: string;
+      kelurahan_nama: string;
+      kecamatan_nama: string;
+      kota_nama: string;
+      provinsi_nama: string;
+    }[];
+  };
+  status: string;
 }
 export interface resAppKuyFindKelurahanV2 {
-  kelurahan_list: {
-    id: number;
-    kode_pos: string;
-    nama: string;
-  }[];
+  results: {
+    kelurahan_list: {
+      id: number;
+      kode_pos: string;
+      nama: string;
+    }[];
+  };
+  status: string;
 }
 export interface resAppKuyJenisLayananV2 {
-  jenis_layanan_list: {
-    kode: string;
-    nama: string;
-    is_close: number;
-  }[];
+  results: {
+    jenis_layanan_list: {
+      kode: string;
+      nama: string;
+      is_close: number;
+    }[];
+  };
+  status: string;
 }
 export interface resAppKuyOutletV2 {
-  outlet_list: {
-    id: number;
-    kode: string;
-    nama: string;
-    alamat: string;
-    kelurahan_id: number;
-    lat: string;
-    lon: string;
-  }[];
+  results: {
+    outlet_list: {
+      id: number;
+      kode: string;
+      nama: string;
+      alamat: string;
+      kelurahan_id: number;
+      lat: string;
+      lon: string;
+    }[];
+  };
+  status: string;
 }
 export interface resAppKuyWaktuPickUpV2 {
-  jam_pickup_list: {
-    jam_awal: string;
-    jam_akhir: string;
-  }[];
+  results: {
+    jam_pickup_list: {
+      jam_awal: string;
+      jam_akhir: string;
+    }[];
+  };
+  status: string;
 }
 export interface resAppKuyJenisItemV2 {
-  jenis_item_list:  {
-    id: number;
-    nama: string;
-    keterangan: string;
-  }[];
+  results: {
+    jenis_item_list:  {
+      id: number;
+      nama: string;
+      keterangan: string;
+    }[];
+  };
+  status: string;
 }
 export interface resAppKuyUkuranItemV2 {
-  ukuran_item_list: {
-    id: number;
-    nama: string;
-    panjang_cm: number;
-    lebar_cm: number;
-    tinggi_cm: number;
-    berat_kg: number;
-  }[];
+  results: {
+    ukuran_item_list: {
+      id: number;
+      nama: string;
+      panjang_cm: number;
+      lebar_cm: number;
+      tinggi_cm: number;
+      berat_kg: number;
+    }[];
+  };
+  status: string;
 }
 export interface resAppKuyPaymentListV2 {
-  payment_channel_list: {
-    kode: string;
-    nama: string;
-    image: string;
-  }[];
+  results: {
+    payment_channel_list: {
+      kode: string;
+      nama: string;
+      image: string;
+    }[];
+  };
+  status: string;
 }
 export interface resAppKuyInvoiceListV2 {
-  invoice_list: {
-    invoice_kode: string;
-    pemesan_nama: string;
-    waktu_pemesanan: string;
-    total_paket: number;
-    total_berat: number;
-    status_pesanan: string;
-  }[];
+  results: {
+    invoice_list: {
+      invoice_kode: string;
+      pemesan_nama: string;
+      waktu_pemesanan: string;
+      total_paket: number;
+      total_berat: number;
+      status_pesanan: string;
+    }[];
+  };
+  status: string;
 }
 export interface resAppKuyInvoiceDetailV2 {
-  invoice_detail: {
-    invoice_kode: string;
-    jenis_layanan: string;
-    jenis_pembayaran: string;
-    status_pesanan: string;
-    waktu_pemesanan: string;
-    pengirim: resAppKuyInvoiceDetailPengirimV2;
-    penerima_list: resAppKuyInvoiceDetailPenerimaListV2[];
-    biaya_jemput: number;
-    biaya_pengiriman_list: resAppKuyInvoiceDetailBiayaPengirimanListV2[];
-    total_tarif: number;
-    payment: resAppKuyInvoiceDetailPaymentV2;
+  results: {
+    invoice_detail: {
+      invoice_kode: string;
+      jenis_layanan: string;
+      jenis_pembayaran: string;
+      status_pesanan: string;
+      waktu_pemesanan: string;
+      pengirim: resAppKuyInvoiceDetailPengirimV2;
+      penerima_list: resAppKuyInvoiceDetailPenerimaListV2[];
+      biaya_jemput: number;
+      biaya_pengiriman_list: resAppKuyInvoiceDetailBiayaPengirimanListV2[];
+      total_tarif: number;
+      payment: resAppKuyInvoiceDetailPaymentV2;
+    };
   };
+  status: string;
 }
 export interface resAppKuyInvoiceDetailPaymentV2 {
   amount: number;
@@ -154,28 +193,31 @@ export interface resAppKuyInvoiceDetailPengirimV2 {
   alamat: string;
 }
 export interface resAppKuyPaketDetailV2 {
-  paket_detail: {
-    resi: string;
-    item_kode_reff: string;
-    tgl_pengiriman: string;
-    jenis_layanan: string;
-    tipe_layanan: string;
-    pengirim: resAppKuyPaketDetailPengirimV2;
-    penerima: resAppKuyPaketDetailPenerimaV2;
-    jenis_item: string;
-    deskripsi_item: string;
-    ukuran_item: string;
-    berat: number;
-    panjang: number;
-    lebar: number;
-    tinggi: number;
-    koli: number;
-    otp: string;
-    flag_asuransi: number;
-    asuransi_detail: resAppKuyPaketDetailAsuransiDetailV2;
-    status_pengiriman_terakhir: string;
-    log_pengiriman_list: resAppKuyPaketDetailLogPengirimanListV2[];
+  results: {
+    paket_detail: {
+      resi: string;
+      item_kode_reff: string;
+      tgl_pengiriman: string;
+      jenis_layanan: string;
+      tipe_layanan: string;
+      pengirim: resAppKuyPaketDetailPengirimV2;
+      penerima: resAppKuyPaketDetailPenerimaV2;
+      jenis_item: string;
+      deskripsi_item: string;
+      ukuran_item: string;
+      berat: number;
+      panjang: number;
+      lebar: number;
+      tinggi: number;
+      koli: number;
+      otp: string;
+      flag_asuransi: number;
+      asuransi_detail: resAppKuyPaketDetailAsuransiDetailV2;
+      status_pengiriman_terakhir: string;
+      log_pengiriman_list: resAppKuyPaketDetailLogPengirimanListV2[];
+    };
   };
+  status: string;
 }
 export interface resAppKuyPaketDetailPengirimV2 {
   nama: string;
@@ -220,17 +262,23 @@ export interface resAppKuyPaketDetailLogPengirimanListKurirV2 {
   nama: string;
 }
 export interface resAppKuySNKV2 {
-  syarat_dan_ketentuan: string;
+  results: {
+    syarat_dan_ketentuan: string;
+  };
+  status: string;
 }
 export interface resAppKuyCekTarifV2 {
-  biaya_jemput: number;
-  biaya_pengiriman_list: resAppKuyCekTarifBiayaPengirimanListV2[];
-  sub_total: number;
-  wallet_diskon: number;
-  total_tarif: number;
-  biaya_tarif: number;
-  biaya_antar: number;
-  biaya_asuransi: number;
+  results: {
+    biaya_jemput: number;
+    biaya_pengiriman_list: resAppKuyCekTarifBiayaPengirimanListV2[];
+    sub_total: number;
+    wallet_diskon: number;
+    total_tarif: number;
+    biaya_tarif: number;
+    biaya_antar: number;
+    biaya_asuransi: number;
+  };
+  status: string;
 }
 export interface resAppKuyCekTarifBiayaPengirimanListV2 {
   keterangan: string;
