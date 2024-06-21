@@ -13,7 +13,7 @@ export interface reqAppShuttleReorderV2 {
     orderId: string;
     departureDate: string;
 
-    returnDate?: string;
+    returnDate?: string | "";
 }
 
 export interface reqAppShuttleCreateOrderV2 {
@@ -22,9 +22,9 @@ export interface reqAppShuttleCreateOrderV2 {
     typeOrder: string;
     useCashback: boolean;
 
-    voucherCode?: string;
-    voucherEventCode?: string;
-    isWallet?: boolean;
+    voucherCode?: string | "";
+    voucherEventCode?: string | "";
+    isWallet?: boolean | false;
 }
 
 export interface reqAppShuttleCheckPriceV2 {
@@ -33,10 +33,10 @@ export interface reqAppShuttleCheckPriceV2 {
     typeOrder: string;
     isasuransi: boolean;
 
-    isconnecting?: boolean;
-    ispp?: boolean;
-    totalPrice?: number;
-    totalInsurance?: number;
+    isconnecting?: boolean | false;
+    ispp?: boolean | false;
+    totalPrice?: number | 0;
+    totalInsurance?: number | 0;
 }
 
 export interface reqAppShuttleCheckPriceUserBookingV2 {
@@ -62,8 +62,8 @@ export interface reqAppShuttleCheckPriceOrderDataV2 {
     traveler: reqAppShuttleCheckPriceTravelerV2[];
     totalPriceTraveler: number;
 
-    totalPriceTravelerPrev?: number;
-    totalPriceInsurance?: number;
+    totalPriceTravelerPrev?: number | 0;
+    totalPriceInsurance?: number | 0;
 }
 
 export interface reqAppShuttleCheckPriceTravelerV2 {
@@ -75,9 +75,9 @@ export interface reqAppShuttleCheckPriceTravelerV2 {
     priceNormal: number;
     pricePromo: number;
 
-    passengerIdentity?: string;
-    priceInsurance?: number;
-    kodePromo?: string;
+    passengerIdentity?: string | "";
+    priceInsurance?: number | 0;
+    kodePromo?: string | "";
 }
 
 export interface reqAppShuttleCheckPriceTravelokaV2 {
@@ -120,7 +120,7 @@ export interface reqAppShuttleCheckPriceTravelokaOrderDataV2 {
 export interface reqAppShuttleCheckPriceTravelokaTravelerV2 {
     name: string;
     title: string;
-    id_layout: string;
+    idLayout: string;
     seatNumber: string;
     passengerIdentity: string;
     price: number;
@@ -134,12 +134,12 @@ export interface reqAppTiketuxCheckPriceV2 {
     orderData: reqAppTiketuxCheckPriceOrderDataV2[];
     typeOrder: string;
 
-    isasuransi?: boolean;
-    ispp?: boolean;
-    isconnecting?: boolean;
-    totalPrice?: number;
-    totalInsurance?: number;
-    tokenData?: string;
+    isasuransi?: boolean | false;
+    ispp?: boolean | false;
+    isconnecting?: boolean | false;
+    totalPrice?: number | 0;
+    totalInsurance?: number | 0;
+    tokenData?: string | "";
 }
 
 export interface reqAppTiketuxCheckPriceUserBookingV2 {
@@ -165,9 +165,9 @@ export interface reqAppTiketuxCheckPriceOrderDataV2 {
     scheduleCode: string;
     traveler: reqAppTiketuxCheckPriceTravelerV2[];
 
-    totalPriceTraveler?: number;
-    totalPriceTravelerPrev?: number;
-    totalPriceInsurance?: number;
+    totalPriceTraveler?: number | 0;
+    totalPriceTravelerPrev?: number | 0;
+    totalPriceInsurance?: number | 0;
 }
 
 export interface reqAppTiketuxCheckPriceTravelerV2 {
@@ -177,15 +177,16 @@ export interface reqAppTiketuxCheckPriceTravelerV2 {
     seatNumber: string;
     promoCode: string;
 
-    passengerIdentity?: string;
-    price?: number;
-    priceNormal?: number;
-    pricePromo?: number;
-    priceInsurance?: number;
-    kodePromo?: string;
+    passengerIdentity?: string | "";
+    price?: number | 0;
+    priceNormal?: number | 0;
+    pricePromo?: number | 0;
+    priceInsurance?: number | 0;
+    kodePromo?: string | "";
 }
 
 export interface reqAppTiketuxAsalV2 {
+    ParsedQs: any;
     search: string;
     lat: string;
     long: string;
@@ -194,7 +195,7 @@ export interface reqAppTiketuxAsalV2 {
 export interface reqAppTiketuxTujuanV2 {
     asal: string;
     isTraveloka: boolean;
-    search?: string;
+    search?: string | "";
 }
 
 export interface reqAppTiketuxJadwalV2 {
@@ -203,13 +204,13 @@ export interface reqAppTiketuxJadwalV2 {
     tujuan: string;
     jumlahpenumpang: number;
 
-    ispp?: boolean;
-    isTraveloka?: boolean;
-    search_asal?: string;
-    search_tujuan?: string;
-    tgl_berangkat_pp?: string;
-    asal_pp?: string;
-    tujuan_pp?: string;
+    ispp?: boolean | false;
+    isTraveloka?: boolean | false;
+    search_asal?: string | "";
+    search_tujuan?: string | "";
+    tgl_berangkat_pp?: string | "";
+    asal_pp?: string | "";
+    tujuan_pp?: string | "";
 }
 
 export interface reqAppTiketuxKursiV2 {
@@ -218,14 +219,14 @@ export interface reqAppTiketuxKursiV2 {
     asal: string;
     tujuan: string;
 
-    isasuransi?: boolean;
-    ispp?: boolean;
-    isconnecting?: boolean;
-    isTraveloka?: boolean;
-    kode_jadwal_pp?: string;
-    tgl_berangkat_pp?: string;
-    asal_pp?: string;
-    tujuan_pp?: string;
+    isasuransi?: boolean | false;
+    ispp?: boolean | false;
+    isconnecting?: boolean | false;
+    isTraveloka?: boolean | false;
+    kode_jadwal_pp?: string | "";
+    tgl_berangkat_pp?: string | "";
+    asal_pp?: string | "";
+    tujuan_pp?: string | "";
 }
 export interface reqAppTravelokaCityV2 {
     limit: number,

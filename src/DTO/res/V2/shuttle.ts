@@ -7,9 +7,9 @@ export interface resAppTiketuxAsalTujuanKotaV2 {
     nama: string;
     kode: string;
 
-    kodeTraveloka?: string;
-    group?: string;
-    img?: string;
+    kodeTraveloka?: string | "";
+    group?: string | "";
+    img?: string | "";
 }
 
 export interface resAppTiketuxAsalTujuanOutletV2 {
@@ -27,18 +27,18 @@ export interface resAppTiketuxAsalTujuanOutletV2 {
     img: string | null;
     code: string;
 
-    kode_kota?: string;
-    flag_bandara?: number;
-    flag_virtual_outlet?: number;
-    url_map_tujuan?: string;
+    kode_kota?: string | "";
+    flag_bandara?: number | 0;
+    flag_virtual_outlet?: number | 0;
+    url_map_tujuan?: string | "";
     list_img?: any[];
-    min_tarif?: number;
-    max_tarif?: number;
-    range_tarif?: string;
-    cabang_tujuan?: string;
-    kota_tujuan?: string;
+    min_tarif?: number | 0;
+    max_tarif?: number | 0;
+    range_tarif?: string | "";
+    cabang_tujuan?: string | "";
+    kota_tujuan?: string | "";
     url_map?: string | null;
-    distance?: number;
+    distance?: number | 0;
 }
 
 export interface resAppTiketuxJadwalV2 {
@@ -207,9 +207,9 @@ export interface resAppTiketuxCheckPriceV2 {
     totalPrice: number;
     tokenData: string;
 
-    isInsurance?: boolean;
-    isReturn?: boolean;
-    isConnecting?: boolean;
+    isInsurance?: boolean | false;
+    isReturn?: boolean | false;
+    isConnecting?: boolean | false;
 }
 
 export interface resAppTiketuxCheckPriceUserBookingV2 {
@@ -232,12 +232,12 @@ export interface resAppTiketuxCheckPriceOrderDataV2 {
     scheduleCode: string;
     traveler: resAppTiketuxCheckPriceTravelerV2[];
 
-    isInsurance?: boolean;
-    isReturn?: boolean;
-    isConnecting?: boolean;
-    totalPriceTraveler?: number;
-    totalPriceTravelerPrev?: number;
-    totalPriceInsurance?: number;
+    isInsurance?: boolean | false;
+    isReturn?: boolean | false;
+    isConnecting?: boolean | false;
+    totalPriceTraveler?: number | 0;
+    totalPriceTravelerPrev?: number | 0;
+    totalPriceInsurance?: number | 0;
 }
 
 export interface resAppTiketuxCheckPriceTravelerV2 {
@@ -249,8 +249,8 @@ export interface resAppTiketuxCheckPriceTravelerV2 {
     priceNormal: number;
     pricePromo: number;
     
-    promoCode?: string;
-    priceInsurance?: number;
+    promoCode?: string | "";
+    priceInsurance?: number | 0;
 }
 
 export interface resAppShuttleOrderV2 {
