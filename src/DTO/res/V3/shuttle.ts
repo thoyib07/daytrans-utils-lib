@@ -206,7 +206,7 @@ export interface resAppTiketuxCheckPriceV3 {
     totalInsurance: number;
     totalPrice: number;
     tokenData: string;
-    typeOrder: string;
+    typeOrder?: string | "TIKETUX";
 
     isInsurance: boolean;
     isReturn: boolean;
@@ -330,7 +330,7 @@ export interface resAppShuttleCheckPriceV3 {
     totalInsurance: number;
     totalPrice: number;
     tokenData: string;
-    typeOrder: string;
+    typeOrder?: string | "TIKETUX";
 
     isInsurance: boolean;
     isReturn: boolean;
@@ -341,7 +341,7 @@ export interface resAppShuttleCheckPriceTravelokaV3 {
     orderData: resAppShuttleCheckPriceTravelokaOrderDataV3[];
     totalPrice: number;
     tokenData: string;
-    typeOrder: string;
+    typeOrder?: string | "TRAVELOKA";
     
     totalInsurance?: number | 0;
     exp?: number | 0;
@@ -351,7 +351,8 @@ export interface resAppShuttleCheckPriceTravelokaV3 {
 }
 
 export interface resAppShuttleCheckPriceUserBookingV3 {
-    name: string;
+    nama?: string;
+    name?: string;
     title: string;
     phone: string;
     email: string;
@@ -409,8 +410,10 @@ export interface resAppShuttleCheckPriceTravelokaOrderDataV3 {
 }
 
 export interface resAppShuttleCheckPriceTravelerV3 {
-    name: string;
+    nama?: string;
+    name?: string;
     title: string;
+    id_layout?: string | "";
     idLayout?: string | "";
     seatNumber: string;
 
@@ -421,11 +424,13 @@ export interface resAppShuttleCheckPriceTravelerV3 {
 }
 
 export interface resAppShuttleCheckPriceTravelokaTravelerV3 {
-    name: string;
+    nama?: string;
+    name?: string;
     title: string;
     seatNumber: string;
     
     passengerIdentity?: string | "";
+    id_layout?: string | "";
     idLayout?: string | "";
     promoCode?: string | "";
     price?: number | 0;
