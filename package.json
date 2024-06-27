@@ -11,12 +11,15 @@
     "url": "https://github.com/thoyib07/daytrans-utils-lib/issues"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "keywords": [
     "utils",
     "daytrans"
   ],
   "author": "Thoyib Hidayat",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.5.2"
+  }
 }
