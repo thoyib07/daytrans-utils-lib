@@ -254,8 +254,8 @@ export interface resAppKuyPaketDetailLogPengirimanListFotoV2 {
   foto_drop_secondary: string;
 }
 export interface resAppKuyPaketDetailLogPengirimanListPenerimaV2 {
-  nama: null;
-  telp: null;
+  nama: string;
+  telp: string;
 }
 export interface resAppKuyPaketDetailLogPengirimanListKurirV2 {
   id: string;
@@ -373,16 +373,16 @@ export interface resAppExpressOrderPaymentV2 {
   orderId: string;
   invoiceNo: string;
   paymentCode: string;
-  paymentPrefix: null;
+  paymentPrefix: string;
   paymentAmount: number;
   serviceFee: number;
   walletUse: number;
   addictUse: number;
-  discountCode: null;
+  discountCode: string;
   discountPrice: number;
   paymentMethod: string;
   paymentStatus: string;
-  paidTime: null;
+  paidTime: string;
   expiredTime: string;
 }
 export interface resAppExpressOrderDataV2 {
