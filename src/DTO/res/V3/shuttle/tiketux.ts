@@ -1,46 +1,8 @@
 import { reqAppShuttleCheckPriceV2 } from "../../../req/V2/shuttle"
-import { resAPITiketuxJadwalSchedule, resAPITiketuxKursi } from "../../V2/shuttle";
+import { resAPITiketuxJadwalSchedule, resAPITiketuxKursi, resAPITiketuxKota, resAPITiketuxOutlet } from "../../V2/shuttle";
 export interface baseTiketuxAsalTujuanV3 {
   outlet: resAPITiketuxOutlet[];
   kota: resAPITiketuxKota[];
-}
-
-export interface resAPITiketuxKota {
-  nama: string;
-  kode: string;
-
-  kodeTraveloka?: string | "";
-  group?: string | "";
-  img?: string | "";
-}
-
-export interface resAPITiketuxOutlet {
-  id: string;
-  group: string;
-  kode: string;
-  nama: string;
-  telpon: string;
-  alamat: string;
-  latitude: string;
-  longitude: string;
-  kota: string;
-  flag_agen: string;
-  flag_aktif: string;
-  img: string | null;
-  code: string;
-
-  kode_kota?: string | "";
-  flag_bandara?: number | 0;
-  flag_virtual_outlet?: number | 0;
-  url_map_tujuan?: string | "";
-  list_img?: any[];
-  min_tarif?: number | 0;
-  max_tarif?: number | 0;
-  range_tarif?: string | "";
-  cabang_tujuan?: string | "";
-  kota_tujuan?: string | "";
-  url_map?: string | null;
-  distance?: number | 0;
 }
 
 /**

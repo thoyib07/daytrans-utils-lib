@@ -1,5 +1,5 @@
 import { reqAppShuttleCheckPriceTravelokaV3, reqAppShuttleCheckPriceV3 } from "../../../req/V3/shuttle";
-import { resAppShuttleGetAllOrderV2, resAppShuttleGetDetailOrderV2, resAppShuttleOrderV2, resAppShuttleReorderV2 } from "../../V2/shuttle";
+import { resAppShuttleEticketV2, resAppShuttleGetAllOrderV2, resAppShuttleGetDetailOrderV2, resAppShuttleOrderV2, resAppShuttleReorderV2 } from "../../V2/shuttle";
 
 /**
  * API Detail Order Shuttel
@@ -17,7 +17,7 @@ export interface resAppShuttleGetAllOrderV3 extends resAppShuttleGetAllOrderV2 {
  * API Eticket Shuttle
  * @link {{BASE_URL_SHUTTLE}}v2/app/order/eticket/:orderId
  */
-export interface resAppShuttleEticketV2 extends resAppShuttleGetDetailOrderV2 { }
+export interface resAppShuttleEticketV3 extends resAppShuttleEticketV2 { }
 
 /**
  * API Reorder Shuttle
