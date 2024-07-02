@@ -1,3 +1,4 @@
+import { baseShuttleCheckPriceUserBookingV3 } from "../../V3/shuttle";
 /**
  * API Detail Order Shuttel
  * @method GET
@@ -15,8 +16,8 @@ export interface reqAppShuttleGetDetailOrderV2 {
 export interface reqAppShuttleGetAllOrderV2 {
     page: number;
     limit: number;
-    typeTrip: string;
-    orderId: string;
+    typeTrip?: string;
+    orderId?: string;
 }
 
 /**
@@ -94,6 +95,7 @@ export interface baseShuttleCheckPriceTravelerV2 {
  * @link {{BASE_URL_SHUTTLE}}v2/app/tiketux/check/price
  */
 export interface reqAppShuttleCheckPriceV2 extends baseShuttleCheckPriceV2<baseShuttleCheckPriceUserBookingV2,reqAppShuttleCheckPriceOrderDataV2> {
+    typeOrder: string;
     isasuransi: boolean | true;
 
     isconnecting?: boolean | false;
@@ -103,13 +105,14 @@ export interface reqAppShuttleCheckPriceV2 extends baseShuttleCheckPriceV2<baseS
 }
 
 export interface reqAppShuttleCheckPriceOrderDataV2 extends baseShuttleCheckPriceOrderDataV2<reqAppShuttleCheckPriceTravelerV2> {
-    // typeTrip: string;
+    typeTrip: string;
 
     estimatedTravelTime: number;
     destinationCounterId: string;
     destinationCounter: string;
     destinationCity: string;
     scheduleCode: string;
+    totalPriceTraveler: number;
 
     totalPriceTravelerPrev?: number | 0;
     totalPriceInsurance?: number | 0;
@@ -128,7 +131,7 @@ export interface reqAppShuttleCheckPriceTravelerV2 extends baseShuttleCheckPrice
  * @method POST
  * @link {{BASE_URL_SHUTTLE}}v2/app/order/check/price
  */
-export interface reqAppShuttleCheckPriceTravelokaV2 extends baseShuttleCheckPriceV2<baseShuttleCheckPriceUserBookingV2, reqAppShuttleCheckPriceTravelokaOrderDataV2> {
+export interface reqAppShuttleCheckPriceTravelokaV2 extends baseShuttleCheckPriceV2<baseShuttleCheckPriceUserBookingV3, reqAppShuttleCheckPriceTravelokaOrderDataV2> {
 }
 
 export interface reqAppShuttleCheckPriceTravelokaOrderDataV2 extends baseShuttleCheckPriceOrderDataV2<reqAppShuttleCheckPriceTravelokaTravelerV2> {
