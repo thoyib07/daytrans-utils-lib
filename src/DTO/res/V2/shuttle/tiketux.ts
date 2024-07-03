@@ -124,16 +124,34 @@ export interface resAPITiketuxJadwalPromo {
 }
 
 export interface resAPITiketuxKursi {
-  totalpenumpang: string;
-  metodepenjualan: string | null;
-  totalkuota: string | null;
-  totalpenumpangagen: number;
   tipe_kendaraan: string;
-  id_layout: string;
+  id_layout?: string;
   baris: string;
   kolom: string;
   kapasitas: string;
-  petalayout: any;
+  isjemput: string | "";
+  jemputminfree: string | "";
+  jemputbiayadalamarea: string | "";
+  jemputmindalamarea: string | "";
+  jemputbiayaluararea: string | "";
+  jemputminluararea: string | "";
+  isantar: string | "";
+  antarminfree: string | "";
+  antarbiayadalamarea: string | "";
+  antarmindalamarea: string | "";
+  antarbiayaluararea: string | "";
+  antarminluararea: string | "";
+  no_manifest: string | null;
+  kode_kendaraan: string | null;
+  no_polisi: string | null;
+  kode_driver: string | null;
+  nama_driver: string | null;
+  peta_layout: resAPITiketuxKursiPetaLayout[];
+  peta_layout_pp: resAPITiketuxKursiPetaLayout[];
+  totalpenumpang: string;
+  metodepenjualan: null | string;
+  totalkuota: null | string;
+  totalpenumpangagen: number;
   totalpenumpang_pp: string;
   metodepenjualan_pp: string;
   totalkuota_pp: string;
@@ -141,45 +159,37 @@ export interface resAPITiketuxKursi {
   baris_pp: string;
   kolom_pp: string;
   kapasitas_pp: string;
-  petalayout_pp: any;
+  petalayout_pp: {
+    [key: string]: resAPITiketuxKursiPetaLayout;
+  };
+  petalayout: {
+    [key: string]: resAPITiketuxKursiPetaLayout;
+  };
   asuransi: number | null;
-  peta_layout: resAPITiketuxKursiPetaLayout[];
-  peta_layout_pp: resAPITiketuxKursiPetaLayout[];
-  isjemput: string;
-  jemputminfree: string;
-  jemputbiayadalamarea: string;
-  jemputmindalamarea: string;
-  jemputbiayaluararea: string;
-  jemputminluararea: string;
-  isantar: string;
-  antarminfree: string;
-  antarbiayadalamarea: string;
-  antarmindalamarea: string;
-  antarbiayaluararea: string;
-  antarminluararea: string;
-  no_manifest: string | null;
-  kode_kendaraan: string | null;
-  no_polisi: string | null;
-  kode_driver: string | null;
-  nama_driver: string | null;
 }
 
 export interface resAPITiketuxKursiPetaLayout {
+  row: number;
+  col: number;
+  asuransi: number;
+  namapenumpang: string | null;
+  kodejadwal: string | null;
+  seatPrice: number;
   status: string;
   label: string;
-  tglberangkat: string;
-  idproduk: string;
-  idoutletpickup: string;
-  idoutletdropoff: string;
-  dek: string;
-  notiket: string;
-  kodebooking: string;
-  nama: string;
+  tglberangkat: null | string;
+  idproduk: null | string;
+  idoutletpickup: null | string;
+  idoutletdropoff: null | string;
+  dek: null | string;
+  notiket: null | string;
+  kodebooking: null | string;
+  nama: null | string;
   istransit: number;
-  iscetaktiket: string;
-  jenispembayaran: string;
-  isboarding: string;
-  waktupesan: string;
+  iscetaktiket: null | string;
+  jenispembayaran: null | string;
+  isboarding: null | string;
+  waktupesan: null | string;
   hargatiket: number;
   kodepromo: string;
   namapromo: string;
@@ -187,12 +197,6 @@ export interface resAPITiketuxKursiPetaLayout {
   totalbayar: number;
   issmoking: number;
   isagenverified: number;
-  asuransi: number;
-  row: number;
-  col: number;
-  namapenumpang: string;
-  seatPrice: number;
-  kodejadwal: string;
 }
 
 /**

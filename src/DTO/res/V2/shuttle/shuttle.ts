@@ -292,7 +292,7 @@ export interface resAppShuttleOrderTravelerV2 {
     scheduleCode: string;
     name: string;
     title: string;
-    idLayout: string;
+    idLayout?: string;
     seatNumber: string;
     price: number;
     priceNormal: number;

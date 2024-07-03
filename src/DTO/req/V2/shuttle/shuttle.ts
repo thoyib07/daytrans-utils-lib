@@ -119,7 +119,7 @@ export interface reqAppShuttleCheckPriceOrderDataV2 extends baseShuttleCheckPric
 }
 
 export interface reqAppShuttleCheckPriceTravelerV2 extends baseShuttleCheckPriceTravelerV2 {
-    id_layout: string;
+    id_layout?: string;
 
     passengerIdentity?: string | "";
     priceInsurance?: number | 0;
