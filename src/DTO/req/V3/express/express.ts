@@ -1,11 +1,14 @@
 export interface reqAppKuyRegionKotaV3 {
   provinceId?: string;
+  search?: string;
 }
 export interface reqAppKuyRegionKecamatanV3 {
   cityId?: string;
+  search?: string;
 }
 export interface reqAppKuyRegionKelurahanV3 {
   districtId?: string;
+  search?: string;
 }
 export interface reqAppKuyFindKelurahanV3 {
   provinceName?: string;
