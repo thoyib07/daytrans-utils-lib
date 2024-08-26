@@ -4,6 +4,23 @@ export interface baseTiketuxKursiV3 {
   departureDate: string;
   scheduleCode: string;
 }
+
+/**
+ * API Kota Tiketux
+ * @method GET
+ * @link {{BASE_URL_SHUTTLE}}v3/app/tiketux/kota
+ */
+export interface reqAppTiketuxKotaV3 { }
+
+/**
+ * API Outlet Tiketux
+ * @method GET
+ * @link {{BASE_URL_SHUTTLE}}v3/app/tiketux/outlet
+ */
+export interface reqAppTiketuxOutletV3 { 
+  city?: string;
+}
+
 /**
  * API Asal Tiketux
  * @method GET
@@ -32,9 +49,11 @@ export interface reqAppTiketuxTujuanV3 extends Pick<baseTiketuxKursiV3, "departu
  */
 export interface reqAppTiketuxJadwalV3 extends Omit<baseTiketuxKursiV3, "scheduleCode"> {
   qty: number;
-  isReturn: boolean;
   isTraveloka: false;
-
+  
+  page?: number | 1;
+  pagepp?: number | 1;
+  isReturn?: boolean | false;
   searchDeparture?: string | "";
   searchDestination?: string | "";
   departureDateReturn?: string | "";

@@ -1,5 +1,5 @@
 import { reqAppShuttleCheckPriceV2 } from "../../../req/V2/shuttle"
-import { resAPITiketuxJadwalSchedule, resAPITiketuxKursi, resAPITiketuxKota, resAPITiketuxOutlet } from "../../V2/shuttle";
+import { resAPITiketuxJadwalSchedule, resAPITiketuxKursi, resAPITiketuxKota, resAPITiketuxOutlet, resAppTiketuxJadwalV2 } from "../../V2/shuttle";
 export interface baseTiketuxAsalTujuanV3 {
   outlet: resAPITiketuxOutlet[];
   kota: resAPITiketuxKota[];
@@ -21,10 +21,8 @@ export interface resAppTiketuxTujuanV3 extends baseTiketuxAsalTujuanV3 { }
  * API Jadwal Tiketux
  * @link {{BASE_URL_SHUTTLE}}v3/app/tiketux/jadwal?departureDate={{departureDate}}&departureCounter={{departureCounter}}&destinationCounter={{destinationCounter}}&qty={{qty}}
  */
-export interface resAppTiketuxJadwalV3 {
+export interface resAppTiketuxJadwalV3 extends Omit<resAppTiketuxJadwalV2,"data">{
   schedule: resAPITiketuxJadwalSchedule[];
-  departureCounter: string[];
-  destinationCounter: string[];
 }
 
 /**

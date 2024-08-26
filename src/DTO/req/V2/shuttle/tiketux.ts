@@ -58,6 +58,23 @@ export interface baseTiketuxKursi {
 }
 
 /**
+ * API Kota Tiketux
+ * @method GET
+ * @link {{BASE_URL_SHUTTLE}}v2/app/tiketux/kota
+ */
+export interface reqAppTiketuxKotaV2 {
+}
+
+/**
+ * API Outlet Tiketux
+ * @method GET
+ * @link {{BASE_URL_SHUTTLE}}v2/app/tiketux/outlet?kota={{KOTA}}
+ */
+export interface reqAppTiketuxOutletV2 {
+  kota?: string;
+}
+
+/**
  * API Asal Tiketux
  * @method GET
  * @link {{BASE_URL_SHUTTLE}}v2/app/tiketux/asal2?search={{SEARCH_ASAL}}&lat={{LAT}}&long={{LONG}}
@@ -88,6 +105,8 @@ export interface reqAppTiketuxJadwalV2 extends Omit<baseTiketuxKursi, "kode_jadw
   jumlahpenumpang: number;
   isTraveloka: false;
 
+  page?: number | 1;
+  pagepp?: number | 1;
   ispp?: boolean | false;
   search_asal?: string | "";
   search_tujuan?: string | "";

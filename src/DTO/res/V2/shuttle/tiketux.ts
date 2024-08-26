@@ -221,6 +221,8 @@ export interface resAppTiketuxJadwalV2 {
   data: resAPITiketuxJadwalSchedule[];
   departureCounter: string[];
   destinationCounter: string[];
+  paging: any | "";
+  pagingpp?: any | "";
 }
 
 /**
