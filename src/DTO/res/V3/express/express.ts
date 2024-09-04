@@ -1,318 +1,37 @@
-export interface resAppKuyRegionProvinsiV3 {
-  results: {
-    provinsi_list: {
-      provinsi_id: number;
-      provinsi_nama: string;
-    }[];
-  };
-  status: string;
-}
-export interface resAppKuyRegionKotaV3 {
-  results: {
-    kota_list: {
-      kota_id: number;
-      kota_nama: string;
-      provinsi_nama: string;
-    }[];
-  };
-  status: string;
-}
-export interface resAppKuyRegionKecamatanV3 {
-  results: {
-    kecamatan_list: {
-      kecamatan_id: number;
-      kecamatan_nama: string;
-      kota_nama: string;
-      provinsi_nama: string;
-    }[];
-  };
-  status: string;
-}
-export interface resAppKuyRegionKelurahanV3 {
-  results: {
-    kelurahan_list: {
-      kelurahan_id: number;
-      kelurahan_kode_pos: string;
-      kelurahan_nama: string;
-      kecamatan_nama: string;
-      kota_nama: string;
-      provinsi_nama: string;
-    }[];
-  };
-  status: string;
-}
-export interface resAppKuyFindKelurahanV3 {
-  results: {
-    kelurahan_list: {
-      id: number;
-      kode_pos: string;
-      nama: string;
-    }[];
-  };
-  status: string;
-}
-export interface resAppKuyJenisLayananV3 {
-  results: {
-    jenis_layanan_list: {
-      kode: string;
-      nama: string;
-      is_close: number;
-    }[];
-  };
-  status: string;
-}
-export interface resAppKuyOutletV3 {
-  results: {
-    outlet_list: {
-      id: number;
-      kode: string;
-      nama: string;
-      alamat: string;
-      kelurahan_id: number;
-      lat: string;
-      lon: string;
-    }[];
-  };
-  status: string;
-}
-export interface resAppKuyWaktuPickUpV3 {
-  results: {
-    jam_pickup_list: {
-      jam_awal: string;
-      jam_akhir: string;
-    }[];
-  };
-  status: string;
-}
-export interface resAppKuyJenisItemV3 {
-  results: {
-    jenis_item_list:  {
-      id: number;
-      nama: string;
-      keterangan: string;
-    }[];
-  };
-  status: string;
-}
-export interface resAppKuyUkuranItemV3 {
-  results: {
-    ukuran_item_list: {
-      id: number;
-      nama: string;
-      panjang_cm: number;
-      lebar_cm: number;
-      tinggi_cm: number;
-      berat_kg: number;
-    }[];
-  };
-  status: string;
-}
-export interface resAppKuyPaymentListV3 {
-  results: {
-    payment_channel_list: {
-      kode: string;
-      nama: string;
-      image: string;
-    }[];
-  };
-  status: string;
-}
-export interface resAppKuyInvoiceListV3 {
-  results: {
-    invoice_list: {
-      invoice_kode: string;
-      pemesan_nama: string;
-      waktu_pemesanan: string;
-      total_paket: number;
-      total_berat: number;
-      status_pesanan: string;
-    }[];
-  };
-  status: string;
-}
-export interface resAppKuyInvoiceDetailV3 {
-  results: {
-    invoice_detail: {
-      invoice_kode: string;
-      jenis_layanan: string;
-      jenis_pembayaran: string;
-      status_pesanan: string;
-      waktu_pemesanan: string;
-      pengirim: resAppKuyInvoiceDetailPengirimV3;
-      penerima_list: resAppKuyInvoiceDetailPenerimaListV3[];
-      biaya_jemput: number;
-      biaya_pengiriman_list: resAppKuyInvoiceDetailBiayaPengirimanListV3[];
-      total_tarif: number;
-      payment: resAppKuyInvoiceDetailPaymentV3;
-    };
-  };
-  status: string;
-}
-export interface resAppKuyInvoiceDetailPaymentV3 {
-  amount: number;
-  channel_name: string;
-  code: string;
-  url: string;
-  expired_at: string;
-}
-export interface resAppKuyInvoiceDetailBiayaPengirimanListV3 {
-  keterangan: string;
-  tarif: number;
-  biaya_antar: number;
-}
-export interface resAppKuyInvoiceDetailPenerimaListV3 {
-  nama: string;
-  telp: string;
-  alamat: string;
-  paket_list: resAppKuyInvoiceDetailPaketlistV3[];
-}
-export interface resAppKuyInvoiceDetailPaketlistV3 {
-  resi: string;
-  item_kode_reff: string;
-  jenis_item: string;
-  deskripsi_item: string;
-  ukuran_item: string;
-  berat: number;
-  panjang: number;
-  lebar: number;
-  tinggi: number;
-  koli: number;
-  otp: string;
-  flag_asuransi: number;
-  asuransi_detail: resAppKuyInvoiceDetailAsuransiDetailV3;
-}
-export interface resAppKuyInvoiceDetailAsuransiDetailV3 {
-  nama: string;
-  logo: string;
-  no_polis: string;
-  status: string;
-}
-export interface resAppKuyInvoiceDetailPengirimV3 {
-  nama: string;
-  telp: string;
-  alamat: string;
-}
-export interface resAppKuyPaketDetailV3 {
-  results: {
-    paket_detail: {
-      resi: string;
-      item_kode_reff: string;
-      tgl_pengiriman: string;
-      jenis_layanan: string;
-      tipe_layanan: string;
-      pengirim: resAppKuyPaketDetailPengirimPenerimaV3;
-      penerima: resAppKuyPaketDetailPengirimPenerimaV3;
-      jenis_item: string;
-      deskripsi_item: string;
-      ukuran_item: string;
-      berat: number;
-      panjang: number;
-      lebar: number;
-      tinggi: number;
-      koli: number;
-      otp: string;
-      flag_asuransi: number;
-      asuransi_detail: resAppKuyPaketDetailAsuransiDetailV3;
-      status_pengiriman_terakhir: string;
-      log_pengiriman_list: resAppKuyPaketDetailLogPengirimanListV3[];
-    };
-  };
-  status: string;
-}
-export interface resAppKuyPaketDetailPengirimPenerimaV3 {
-  nama: string;
-  telp: string;
-  alamat: string;
-}
-export interface resAppKuyPaketDetailAsuransiDetailV3 {
-  nama: string;
-  logo: string;
-  no_polis: string;
-  status: string;
-}
-export interface resAppKuyPaketDetailLogPengirimanListV3 {
-  status: string;
-  kurir: any[] | resAppKuyPaketDetailLogPengirimanListKurirV3;
-  hari: string;
-  tanggal: string;
-  jam: string;
-  waktu: string;
-  penerima: resAppKuyPaketDetailLogPengirimanListPenerimaV3 | any[];
-  foto: resAppKuyPaketDetailLogPengirimanListFotoV3 | any[];
-  user_drop: string;
-  catatan_drop: string;
-  kurir_nama: string;
-  kurir_telp: string;
-}
-export interface resAppKuyPaketDetailLogPengirimanListFotoV3 {
-  foto_drop_primary: string;
-  foto_drop_secondary: string;
-}
-export interface resAppKuyPaketDetailLogPengirimanListPenerimaV3 {
-  nama: string;
-  telp: string;
-}
-export interface resAppKuyPaketDetailLogPengirimanListKurirV3 {
-  id: string;
-  nama: string;
-}
-export interface resAppKuySNKV3 {
-  results: {
-    syarat_dan_ketentuan: string;
-  };
-  status: string;
-}
-export interface resAppKuyCekTarifV3 {
-  results: {
-    biaya_jemput: number;
-    biaya_pengiriman_list: resAppKuyCekTarifBiayaPengirimanListV3[];
-    sub_total: number;
-    wallet_diskon: number;
-    total_tarif: number;
-    biaya_tarif: number;
-    biaya_antar: number;
-    biaya_asuransi: number;
-  };
-  status: string;
-}
-export interface resAppKuyCekTarifBiayaPengirimanListV3 {
-  keterangan: string;
-  tarif: number;
-  biaya_asuransi: number;
-  biaya_asuransi_detail_list: resAppKuyCekTarifBiayaPengirimanListBiayaAsuransiDetailListV3[];
-  biaya_antar: number;
-}
-export interface resAppKuyCekTarifBiayaPengirimanListBiayaAsuransiDetailListV3 {
-  nilai_barang: number;
-  biaya_pengiriman: number;
-  nominal_asuransi: number;
-}
-export interface resAppExpressGetPriceOrderV3 {
-  pemesan_nama: string;
-  pemesan_telp: string;
-  pemesan_email: string;
-  jenis_layanan: string;
-  tgl_pengiriman: string;
-  sales_channel: string;
-  order_list: resAppExpressGetPriceOrderListV3[];
-  tokenData: string;
-}
-export interface resAppExpressGetPriceOrderListV3 {
-  tipe_pickup: string;
-  tipe_drop: string;
-  ready_time_pickup: string;
-  ready_time_pickup_akhir: string;
-  pickup_pool_id: string;
-  drop_pool_id: string;
-  pengirim: resAppExpressGetPriceOrderPengirimPenerimaV3;
-  penerima: resAppExpressGetPriceOrderPengirimPenerimaV3;
-  paket_list: resAppExpressGetPriceOrderPaketListV3[];
-  total_biaya_asuransi: number;
-  total_biaya_jemput: number;
-  total_biaya_kirim: number;
-  total_biaya_antar: number;
-  total_bayar: number;
-}
+import { resAppExpressGetPriceOrderListV2, resAppExpressGetPriceOrderPaketListV2, resAppExpressGetPriceOrderV2, resAppExpressOrderDataItemV2, resAppExpressOrderDataRecipientV2, resAppExpressOrderDataV2, resAppExpressOrderPaymentV2, resAppExpressOrderSenderV2, resAppExpressOrderV2, resAppKuyCekTarifBiayaPengirimanListBiayaAsuransiDetailListV2, resAppKuyCekTarifBiayaPengirimanListV2, resAppKuyCekTarifV2, resAppKuyFindKelurahanV2, resAppKuyInvoiceDetailAsuransiDetailV2, resAppKuyInvoiceDetailBiayaPengirimanListV2, resAppKuyInvoiceDetailPaketlistV2, resAppKuyInvoiceDetailPaymentV2, resAppKuyInvoiceDetailPenerimaListV2, resAppKuyInvoiceDetailPengirimV2, resAppKuyInvoiceDetailV2, resAppKuyInvoiceListV2, resAppKuyJenisItemV2, resAppKuyJenisLayananV2, resAppKuyOutletV2, resAppKuyPaketDetailAsuransiDetailV2, resAppKuyPaketDetailLogPengirimanListFotoV2, resAppKuyPaketDetailLogPengirimanListKurirV2, resAppKuyPaketDetailLogPengirimanListPenerimaV2, resAppKuyPaketDetailLogPengirimanListV2, resAppKuyPaketDetailPengirimPenerimaV2, resAppKuyPaketDetailV2, resAppKuyPaymentListV2, resAppKuyRegionKecamatanV2, resAppKuyRegionKelurahanV2, resAppKuyRegionKotaV2, resAppKuyRegionProvinsiV2, resAppKuySNKV2, resAppKuyUkuranItemV2, resAppKuyWaktuPickUpV2 } from "../../V2/express";
+
+export interface resAppKuyRegionProvinsiV3 extends resAppKuyRegionProvinsiV2 { }
+export interface resAppKuyRegionKotaV3 extends resAppKuyRegionKotaV2 { }
+export interface resAppKuyRegionKecamatanV3 extends resAppKuyRegionKecamatanV2 { }
+export interface resAppKuyRegionKelurahanV3 extends resAppKuyRegionKelurahanV2 { }
+export interface resAppKuyFindKelurahanV3 extends resAppKuyFindKelurahanV2 { }
+export interface resAppKuyJenisLayananV3 extends resAppKuyJenisLayananV2 { }
+export interface resAppKuyOutletV3 extends resAppKuyOutletV2 { }
+export interface resAppKuyWaktuPickUpV3 extends resAppKuyWaktuPickUpV2 { }
+export interface resAppKuyJenisItemV3 extends resAppKuyJenisItemV2 { }
+export interface resAppKuyUkuranItemV3 extends resAppKuyUkuranItemV2 { }
+export interface resAppKuyPaymentListV3 extends resAppKuyPaymentListV2 { }
+export interface resAppKuyInvoiceListV3 extends resAppKuyInvoiceListV2 { }
+export interface resAppKuyInvoiceDetailV3 extends resAppKuyInvoiceDetailV2 { }
+export interface resAppKuyInvoiceDetailPaymentV3 extends resAppKuyInvoiceDetailPaymentV2 { }
+export interface resAppKuyInvoiceDetailBiayaPengirimanListV3 extends resAppKuyInvoiceDetailBiayaPengirimanListV2 { }
+export interface resAppKuyInvoiceDetailPenerimaListV3 extends resAppKuyInvoiceDetailPenerimaListV2 { }
+export interface resAppKuyInvoiceDetailPaketlistV3 extends resAppKuyInvoiceDetailPaketlistV2 { }
+export interface resAppKuyInvoiceDetailAsuransiDetailV3 extends resAppKuyInvoiceDetailAsuransiDetailV2 { }
+export interface resAppKuyInvoiceDetailPengirimV3 extends resAppKuyInvoiceDetailPengirimV2 { }
+export interface resAppKuyPaketDetailV3 extends resAppKuyPaketDetailV2 { }
+export interface resAppKuyPaketDetailPengirimPenerimaV3 extends resAppKuyPaketDetailPengirimPenerimaV2 { }
+export interface resAppKuyPaketDetailAsuransiDetailV3 extends resAppKuyPaketDetailAsuransiDetailV2 { }
+export interface resAppKuyPaketDetailLogPengirimanListV3 extends resAppKuyPaketDetailLogPengirimanListV2 { }
+export interface resAppKuyPaketDetailLogPengirimanListFotoV3 extends resAppKuyPaketDetailLogPengirimanListFotoV2 { }
+export interface resAppKuyPaketDetailLogPengirimanListPenerimaV3 extends resAppKuyPaketDetailLogPengirimanListPenerimaV2 { }
+export interface resAppKuyPaketDetailLogPengirimanListKurirV3 extends resAppKuyPaketDetailLogPengirimanListKurirV2 { }
+export interface resAppKuySNKV3 extends resAppKuySNKV2 { }
+export interface resAppKuyCekTarifV3 extends resAppKuyCekTarifV2 { }
+export interface resAppKuyCekTarifBiayaPengirimanListV3 extends resAppKuyCekTarifBiayaPengirimanListV2 { }
+export interface resAppKuyCekTarifBiayaPengirimanListBiayaAsuransiDetailListV3 extends resAppKuyCekTarifBiayaPengirimanListBiayaAsuransiDetailListV2 { }
+export interface resAppExpressGetPriceOrderV3 extends resAppExpressGetPriceOrderV2 { }
+export interface resAppExpressGetPriceOrderListV3 extends resAppExpressGetPriceOrderListV2 { }
 export interface resAppExpressGetPriceOrderPengirimPenerimaV3 {
   telp: string;
   nama: string;
@@ -322,94 +41,10 @@ export interface resAppExpressGetPriceOrderPengirimPenerimaV3 {
   lon: string;
   kelurahan_id: number;
 }
-export interface resAppExpressGetPriceOrderPaketListV3 {
-  uniqueCode: string;
-  jenis_item_id: string;
-  jenis_item: string;
-  ukuran_item_id: string;
-  ukuran_item: string;
-  deskripsi_item: string;
-  berat_kg: number;
-  panjang_cm: number;
-  lebar_cm: number;
-  tinggi_cm: number;
-  koli: number;
-  flag_asuransi: number;
-  nilai_barang: number;
-  nominal_pengiriman: number;
-  nominal_asuransi: number;
-}
-export interface resAppExpressOrderV3 {
-  sender: resAppExpressOrderSenderV3;
-  orderData: resAppExpressOrderDataV3[];
-  payment: resAppExpressOrderPaymentV3;
-}
-export interface resAppExpressOrderSenderV3 {
-  senderName: string;
-  senderPhone: string;
-  address: string;
-  notedAddress: string;
-  latlng: string;
-  orderId: string;
-  fmCost: number;
-  estimatedPickUp: string;
-}
-export interface resAppExpressOrderPaymentV3 {
-  customerId: number;
-  orderId: string;
-  invoiceNo: string;
-  paymentCode: string;
-  paymentPrefix: string;
-  paymentAmount: number;
-  serviceFee: number;
-  walletUse: number;
-  addictUse: number;
-  discountCode: string;
-  discountPrice: number;
-  paymentMethod: string;
-  paymentStatus: string;
-  paidTime: string;
-  expiredTime: string;
-}
-export interface resAppExpressOrderDataV3 {
-  recipient: resAppExpressOrderDataRecipientV3;
-  item: resAppExpressOrderDataItemV3[];
-}
-export interface resAppExpressOrderDataRecipientV3 {
-  id: number;
-  isCounter: boolean;
-  cityId: number;
-  kelurahanId: number;
-  counterId: number;
-  name: string;
-  phone: string;
-  address: string;
-  latlng: string;
-  note: string;
-  lsCost: number;
-  bbCost: number;
-  addCost: number;
-  insuranceCost: number;
-  noResi: string;
-  serviceType: string;
-  readyPickupTime: string;
-}
-export interface resAppExpressOrderDataItemV3 {
-  orderId: string;
-  uniqueCode: string;
-  orderExpressRecipientId: number;
-  descriptionItem: string;
-  weight: number;
-  quantity: number;
-  size: string;
-  sizeId: string;
-  sizeName: string;
-  dimensions: string;
-  noResi: string;
-  packageType: string;
-  packageTypeId: string;
-  flag_asuransi: number;
-  nilai_barang: number;
-  insuranceCost: number;
-  shippingCost: number;
-}
+export interface resAppExpressGetPriceOrderPaketListV3 extends resAppExpressGetPriceOrderPaketListV2 { }
+export interface resAppExpressOrderV3 extends resAppExpressOrderV2 { }
+export interface resAppExpressOrderSenderV3 extends resAppExpressOrderSenderV2 { }
+export interface resAppExpressOrderPaymentV3 extends resAppExpressOrderPaymentV2 { }
+export interface resAppExpressOrderDataV3 extends resAppExpressOrderDataV2 { }
+export interface resAppExpressOrderDataRecipientV3 extends resAppExpressOrderDataRecipientV2 { }
+export interface resAppExpressOrderDataItemV3 extends resAppExpressOrderDataItemV2 { }
