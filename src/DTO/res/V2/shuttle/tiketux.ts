@@ -15,7 +15,6 @@ export interface resAPITiketuxKota {
 
 export interface resAPITiketuxOutlet {
   id: string;
-  group: string;
   kode: string;
   nama: string;
   telpon: string;
@@ -23,12 +22,13 @@ export interface resAPITiketuxOutlet {
   latitude: string;
   longitude: string;
   kota: string;
-  flag_agen: string;
-  flag_aktif: string;
-  img: string | null;
   code: string;
-
+  
+  img?: string | null;
+  group?: string | null;
   kode_kota?: string | "";
+  flag_aktif?: number | 0;
+  flag_agen?: number | 0;
   flag_bandara?: number | 0;
   flag_virtual_outlet?: number | 0;
   url_map_tujuan?: string | "";
@@ -36,6 +36,7 @@ export interface resAPITiketuxOutlet {
   min_tarif?: number | 0;
   max_tarif?: number | 0;
   range_tarif?: string | "";
+  range_tarif_pp?: string | "";
   cabang_tujuan?: string | "";
   kota_tujuan?: string | "";
   url_map?: string | null;
@@ -44,7 +45,7 @@ export interface resAPITiketuxOutlet {
 
 export interface resAPITiketuxJadwalSchedule {
   id_produk: string;
-  kode_produk: string;
+  kode_produk?: string;
   rute: string;
   id_outlet_pickup: string;
   nama_outlet_pickup: string;
@@ -54,60 +55,69 @@ export interface resAPITiketuxJadwalSchedule {
   nama_outlet_dropoff: string;
   alamat_outlet_dropoff: string;
   maps_outlet_dropoff: string;
-  estimasi_waktu_tempuh: number;
+  estimasi_waktu_tempuh?: number;
   estimasi_waktu_tempuh_menit: number;
   estimasi_waktu_tempuh_str: string;
   tgl_berangkat_induk: string;
+  tgl_berangkat: string;
   jam_berangkat: string;
-  tgl_sampai: string;
-  jam_sampai: string;
-  max_waktu_book: string;
-  id_layanan: string;
+  tgl_sampai?: string;
+  jam_sampai?: string;
+  max_waktu_book?: string;
+  id_layanan?: string;
   nama_layanan: string;
-  tipe_kendaraan: string;
-  tarif: number;
+  tipe_kendaraan?: string;
+  tarif?: number;
   range_tarif: string;
-  min_tarif: number;
   max_tarif: number;
+  min_tarif: number;
   range_tarif_disc: string;
   min_tarif_disc: number;
   max_tarif_disc: number;
-  biaya_addon_mutasi: number;
-  promo: resAPITiketuxJadwalPromo[];
+  biaya_addon_mutasi?: number;
   jumlah_kursi: number;
   sisa_kursi: number;
-  kursi_terisi: number;
-  keterangan: string;
-  is_jadwal_dioperasikan: string;
-  is_jadwal_lewat: number;
-  is_waktu_verify: number;
-  is_waktu_verify_maskapai: number;
-  is_pilih_kursi: number;
-  show_area_antar_jemput: number;
+  kursi_terisi?: number;
+  keterangan?: string;
+  is_jadwal_dioperasikan?: string;
+  is_jadwal_lewat?: number;
+  show_btn_wa?: number;
+  is_waktu_verify?: number;
+  is_waktu_verify_maskapai?: number;
+  is_pilih_kursi?: number;
+  show_area_antar_jemput?: number;
   is_transit: number;
-  list_transit: resAPITiketuxJadwalListTransit[];
   is_connecting: number;
-  list_connecting: any[];
-  list_transit_connecting: resAPITiketuxJadwalListTransitConnecting[];
   operator: string;
-  detail_rute: string;
-  harga_tiket: number;
-  layout_kursi: number;
-  jumlah_booking: number;
+  detail_rute?: string;
+  harga_tiket?: number;
+  layout_kursi?: number;
+  jumlah_booking?: number;
   is_sold: boolean;
+  promo: resAPITiketuxJadwalPromo[];
+  list_transit: resAPITiketuxJadwalListTransit[];
+  list_transit_connecting: resAPITiketuxJadwalListTransitConnecting[];
+  list_connecting: resAPITiketuxJadwalListTransitConnecting[];
 }
 
 export interface resAPITiketuxJadwalListTransitConnecting {
   tgl_berangkat: string;
   jam_berangkat: string;
-  id_produk: string;
-  kode_produk: string;
-  id_outlet_pickup: string;
+  id_produk?: string;
+  kode_produk?: string;
+  id_outlet_pickup?: string;
   nama_outlet_pickup: string;
-  id_outlet_dropoff: string;
-  nama_outlet_dropoff: string;
-  ewt_connecting: number;
-  waktu_tunggu: number;
+  kota_outlet_pickup?: string;
+  id_outlet_dropoff?: string;
+  nama_outlet_dropoff?: string;
+  kota_outlet_dropoff?: string;
+  ewt_connecting?: number;
+  tarif?: number;
+  min_tarif?: number;
+  max_tarif?: number;
+  waktu_tunggu?: number;
+  tgl_sampai?: string;
+  jam_sampai?: string;
 }
 
 export interface resAPITiketuxJadwalListTransit {
@@ -125,78 +135,81 @@ export interface resAPITiketuxJadwalPromo {
 
 export interface resAPITiketuxKursi {
   tipe_kendaraan: string;
-  id_layout?: string;
   baris: string;
   kolom: string;
   kapasitas: string;
-  isjemput: string | "";
-  jemputminfree: string | "";
-  jemputbiayadalamarea: string | "";
-  jemputmindalamarea: string | "";
-  jemputbiayaluararea: string | "";
-  jemputminluararea: string | "";
-  isantar: string | "";
-  antarminfree: string | "";
-  antarbiayadalamarea: string | "";
-  antarmindalamarea: string | "";
-  antarbiayaluararea: string | "";
-  antarminluararea: string | "";
   no_manifest: string | null;
   kode_kendaraan: string | null;
   no_polisi: string | null;
   kode_driver: string | null;
   nama_driver: string | null;
-  peta_layout: resAPITiketuxKursiPetaLayout[];
-  peta_layout_pp: resAPITiketuxKursiPetaLayout[];
   totalpenumpang: string;
-  metodepenjualan: null | string;
-  totalkuota: null | string;
-  totalpenumpangagen: number;
-  totalpenumpang_pp: string;
-  metodepenjualan_pp: string;
-  totalkuota_pp: string;
-  totalpenumpangagen_pp: string;
-  baris_pp: string;
-  kolom_pp: string;
-  kapasitas_pp: string;
-  petalayout_pp: {
-    [key: string]: resAPITiketuxKursiPetaLayout;
-  };
-  petalayout: {
-    [key: string]: resAPITiketuxKursiPetaLayout;
-  };
+  peta_layout: resAPITiketuxKursiPetaLayout[];
   asuransi: number | null;
+  id_layout: string;
+  idProduct?: null | string;
+  
+  petalayout?: {
+    [key: string]: resAPITiketuxKursiPetaLayout;
+  };
+  isjemput?: string | "";
+  jemputminfree?: string | "";
+  jemputbiayadalamarea?: string | "";
+  jemputmindalamarea?: string | "";
+  jemputbiayaluararea?: string | "";
+  jemputminluararea?: string | "";
+  isantar?: string | "";
+  antarminfree?: string | "";
+  antarbiayadalamarea?: string | "";
+  antarmindalamarea?: string | "";
+  antarbiayaluararea?: string | "";
+  antarminluararea?: string | "";
+  peta_layout_pp?: resAPITiketuxKursiPetaLayout[];
+  metodepenjualan?: null | string;
+  totalkuota?: null | string;
+  totalpenumpangagen?: number;
+  totalpenumpang_pp?: string;
+  metodepenjualan_pp?: string;
+  totalkuota_pp?: string;
+  totalpenumpangagen_pp?: string;
+  baris_pp?: string;
+  kolom_pp?: string;
+  kapasitas_pp?: string;
+  petalayout_pp?: {
+    [key: string]: resAPITiketuxKursiPetaLayout;
+  };
 }
 
 export interface resAPITiketuxKursiPetaLayout {
   row: number;
   col: number;
   asuransi: number;
-  namapenumpang: string | null;
-  kodejadwal: string | null;
   seatPrice: number;
   status: string;
   label: string;
   tglberangkat: null | string;
   idproduk: null | string;
-  idoutletpickup: null | string;
-  idoutletdropoff: null | string;
-  dek: null | string;
-  notiket: null | string;
-  kodebooking: null | string;
-  nama: null | string;
-  istransit: number;
-  iscetaktiket: null | string;
-  jenispembayaran: null | string;
-  isboarding: null | string;
-  waktupesan: null | string;
   hargatiket: number;
   kodepromo: string;
   namapromo: string;
   nominal: number;
   totalbayar: number;
   issmoking: number;
-  isagenverified: number;
+
+  kodejadwal?: string | null;
+  idoutletpickup?: null | string;
+  idoutletdropoff?: null | string;
+  dek?: null | string;
+  notiket?: null | string;
+  kodebooking?: null | string;
+  nama?: null | string;
+  namapenumpang?: string | null;
+  istransit?: number;
+  iscetaktiket?: null | string;
+  jenispembayaran?: null | string;
+  isboarding?: null | string;
+  waktupesan?: null | string;
+  isagenverified?: number;
 }
 
 /**
@@ -219,8 +232,14 @@ export interface resAppTiketuxTujuanV2 extends baseTiketuxAsalTujuanV2 {
  */
 export interface resAppTiketuxJadwalV2 {
   data: resAPITiketuxJadwalSchedule[];
-  departureCounter: string[];
-  destinationCounter: string[];
+  departureCounter?: {
+    id: string;
+    name: string;
+  }[];
+  destinationCounter?: {
+    id: string;
+    name: string;
+  }[];
   paging?: any | "";
   pagingpp?: any | "";
 }

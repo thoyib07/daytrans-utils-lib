@@ -30,10 +30,10 @@ export interface resAppTravelokaBoardingPointV2 {
  */
 export interface resAppTravelokaInventoryV2 {
   responseStatus: string;
-  responseMessage: string;
+  responseMessage: string | null;
   searchStatus: string;
   departResult: resAppTravelokaInventoryDepartResultV2;
-  returnResult: resAppTravelokaInventoryDepartResultV2;
+  returnResult: resAppTravelokaInventoryDepartResultV2 | null;
   pollingData: resAppTravelokaInventoryPollingDataV2;
 }
 
@@ -43,11 +43,11 @@ export interface resAppTravelokaInventoryPollingDataV2 {
 }
 
 export interface resAppTravelokaInventoryDepartResultV2 {
-  departureCounter: string[];
-  destinationCounter: string[];
+  departureCounter?: string[];
+  destinationCounter?: string[];
   inventories: resAppTravelokaInventoryDepartResultInventoryV2[];
   otherRouteSuggestions: resAppTravelokaInventoryDepartResultOtherRouteSuggestionV2[];
-  }
+}
   
 export interface resAppTravelokaInventoryDepartResultOtherRouteSuggestionV2 {
   originCode: string;
@@ -66,19 +66,24 @@ export interface resAppTravelokaInventoryDepartResultInventoryV2 {
   oldFare: resAppTravelokaInventoryDepartResultInventoryFareV2;
   fare: resAppTravelokaInventoryDepartResultInventoryFareV2;
   duration: resAppTravelokaInventoryDepartResultInventoryHourMinuteV2;
+  durationStr: string; // additional
+  departureDate: string; // additional
+  departureTime: string; // additional
+  arrivalDate: string; // additional
+  arrivalTime: string; // additional
   numOfSeatsAvailable: number;
   seatCapacity: number;
   seatLayout: string;
   seatClass: string;
   seatSubClass: string;
   busType: string;
-  fleetName: string;
+  fleetName?: string;
   busTripCode: string;
   requiresPassengerIds: boolean;
   seatMapAvailable: boolean;
   shouldExchangeEticket: boolean;
-  facilities: string[][];
-  productType: string;
+  facilities?: string[];
+  productType?: string
 }
 
 export interface resAppTravelokaInventoryDepartResultInventoryFareV2 {
@@ -111,19 +116,19 @@ export interface resAppTravelokaInventoryDepartResultInventoryOriginPointDetailL
 }
 
 export interface resAppTravelokaInventoryDepartResultInventoryHourMinuteV2 {
-  hour: number;
-  minute: number;
+  hour: string;
+  minute: string;
 }
 
 export interface resAppTravelokaInventoryDepartResultInventoryMonthDayYearV2 {
-  month: number;
-  day: number;
-  year: number;
+  month: string;
+  day: string;
+  year: string;
 }
 
 export interface resAppTravelokaInventoryDepartResultInventoryOriginPointDetailGeoPointV2 {
-  longitude: number;
-  latitude: number;
+  longitude: string;
+  latitude: string;
 }
 
 /**
@@ -133,13 +138,14 @@ export interface resAppTravelokaInventoryDepartResultInventoryOriginPointDetailG
  */
 export interface resAppTravelokaSeatV2 {
   responseStatus: string;
-  responseMessage: string;
+  responseMessage: string | null;
   status: string;
   wagons: resAppTravelokaSeatWagonV2[];
 }
 
 export interface resAppTravelokaSeatWagonV2 {
   wagonId: string;
+  idProduct?: string;
   wagonLabel: string;
   wagonGrids: resAppTravelokaSeatWagonGridV2[][];
 }
@@ -147,5 +153,5 @@ export interface resAppTravelokaSeatWagonV2 {
 export interface resAppTravelokaSeatWagonGridV2 {
   gridType: string;
   gridStatus: string;
-  value: string;
+  value: string | null;
 }

@@ -5,7 +5,6 @@ export interface resAppKuyRegionProvinsiV2 {
       provinsi_nama: string;
     }[];
   };
-  message: string;
   status: string;
 }
 export interface resAppKuyRegionKotaV2 {
@@ -16,7 +15,6 @@ export interface resAppKuyRegionKotaV2 {
       provinsi_nama: string;
     }[];
   };
-  message: string;
   status: string;
 }
 export interface resAppKuyRegionKecamatanV2 {
@@ -28,7 +26,6 @@ export interface resAppKuyRegionKecamatanV2 {
       provinsi_nama: string;
     }[];
   };
-  message: string;
   status: string;
 }
 export interface resAppKuyRegionKelurahanV2 {
@@ -42,7 +39,6 @@ export interface resAppKuyRegionKelurahanV2 {
       provinsi_nama: string;
     }[];
   };
-  message: string;
   status: string;
 }
 export interface resAppKuyFindKelurahanV2 {
@@ -53,7 +49,6 @@ export interface resAppKuyFindKelurahanV2 {
       nama: string;
     }[];
   };
-  message: string;
   status: string;
 }
 export interface resAppKuyJenisLayananV2 {
@@ -64,7 +59,6 @@ export interface resAppKuyJenisLayananV2 {
       is_close: number;
     }[];
   };
-  message: string;
   status: string;
 }
 export interface resAppKuyOutletV2 {
@@ -79,7 +73,6 @@ export interface resAppKuyOutletV2 {
       lon: string;
     }[];
   };
-  message: string;
   status: string;
 }
 export interface resAppKuyWaktuPickUpV2 {
@@ -89,7 +82,6 @@ export interface resAppKuyWaktuPickUpV2 {
       jam_akhir: string;
     }[];
   };
-  message: string;
   status: string;
 }
 export interface resAppKuyJenisItemV2 {
@@ -100,7 +92,6 @@ export interface resAppKuyJenisItemV2 {
       keterangan: string;
     }[];
   };
-  message: string;
   status: string;
 }
 export interface resAppKuyUkuranItemV2 {
@@ -114,7 +105,6 @@ export interface resAppKuyUkuranItemV2 {
       berat_kg: number;
     }[];
   };
-  message: string;
   status: string;
 }
 export interface resAppKuyPaymentListV2 {
@@ -125,7 +115,6 @@ export interface resAppKuyPaymentListV2 {
       image: string;
     }[];
   };
-  message: string;
   status: string;
 }
 export interface resAppKuyInvoiceListV2 {
@@ -139,7 +128,6 @@ export interface resAppKuyInvoiceListV2 {
       status_pesanan: string;
     }[];
   };
-  message: string;
   status: string;
 }
 export interface resAppKuyInvoiceDetailV2 {
@@ -158,7 +146,6 @@ export interface resAppKuyInvoiceDetailV2 {
       payment: resAppKuyInvoiceDetailPaymentV2;
     };
   };
-  message: string;
   status: string;
 }
 export interface resAppKuyInvoiceDetailPaymentV2 {
@@ -230,7 +217,6 @@ export interface resAppKuyPaketDetailV2 {
       log_pengiriman_list: resAppKuyPaketDetailLogPengirimanListV2[];
     };
   };
-  message: string;
   status: string;
 }
 export interface resAppKuyPaketDetailPengirimPenerimaV2 {
@@ -274,7 +260,6 @@ export interface resAppKuySNKV2 {
   results: {
     syarat_dan_ketentuan: string;
   };
-  message: string;
   status: string;
 }
 export interface resAppKuyCekTarifV2 {
@@ -288,7 +273,6 @@ export interface resAppKuyCekTarifV2 {
     biaya_antar: number;
     biaya_asuransi: number;
   };
-  message: string;
   status: string;
 }
 export interface resAppKuyCekTarifBiayaPengirimanListV2 {

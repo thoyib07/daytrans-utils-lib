@@ -11,12 +11,16 @@
     "url": "https://github.com/thoyib07/daytrans-utils-lib/issues"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "release-it"
   },
   "keywords": [
     "utils",
     "daytrans"
   ],
   "author": "Thoyib Hidayat",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "release-it": "^17.6.0"
+  }
 }
