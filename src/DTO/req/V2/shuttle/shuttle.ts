@@ -62,7 +62,7 @@ export interface baseShuttleCheckPriceV2<UserBookingV2, OrderDataV2> {
 }
 
 export interface baseShuttleCheckPriceUserBookingV2 {
-    nama: string;
+    nama?: string;
     title: string;
     phone: string;
     email: string;
@@ -96,7 +96,7 @@ export interface baseShuttleCheckPriceTravelerV2 {
  */
 export interface reqAppShuttleCheckPriceV2 extends baseShuttleCheckPriceV2<baseShuttleCheckPriceUserBookingV2,reqAppShuttleCheckPriceOrderDataV2> {
     typeOrder: string;
-    isasuransi: boolean | true;
+    isasuransi?: boolean | true;
 
     isconnecting?: boolean | false;
     ispp?: boolean | false;
