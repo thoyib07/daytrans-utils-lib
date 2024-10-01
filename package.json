@@ -1,6 +1,6 @@
 {
   "name": "daytrans-utils",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Lib utils for daytrans apps",
   "main": "index.ts",
   "repository": {
@@ -11,16 +11,12 @@
     "url": "https://github.com/thoyib07/daytrans-utils-lib/issues"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "release-it"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "utils",
     "daytrans"
   ],
   "author": "Thoyib Hidayat",
-  "license": "ISC",
-  "dependencies": {
-    "release-it": "^17.6.0"
-  }
+  "license": "ISC"
 }
