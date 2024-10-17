@@ -42,6 +42,15 @@ export interface resAppShuttleCheckPriceV3 extends reqAppShuttleCheckPriceV3 {
     totalInsurance: number;
     totalPrice: number;
     tokenData: string;
+    orderSummary?: {
+        product: number;
+        insurance: number;
+        serviceFee: number;
+        serviceFeeDetail: string;
+        voucher: number;
+        addict: number;
+        amount: number;
+    }
 }
 
 /**
@@ -53,4 +62,13 @@ export interface resAppShuttleCheckPriceTravelokaV3 extends reqAppShuttleCheckPr
     totalInsurance: number;
     totalPrice: number;
     tokenData: string;
+    orderSummary?: {
+        product: number;
+        insurance: number;
+        serviceFee: number;
+        serviceFeeDetail: string;
+        voucher: number;
+        addict: number;
+        amount: number;
+    }
 }

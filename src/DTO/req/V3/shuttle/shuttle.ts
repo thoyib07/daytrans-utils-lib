@@ -69,7 +69,13 @@ export interface reqAppShuttleCheckPriceV3 extends baseShuttleCheckPriceV2<baseS
     isInsurance: boolean;
     isConnecting: boolean;
     isReturn: boolean;
-
+    payment?: {
+        product: number;
+        insurance: number;
+        method: string;
+        isAddict: 0 | 1;
+        voucherCode: string;
+    }
     // totalPrice?: number | 0;
     // totalInsurance?: number | 0;
 }
@@ -124,6 +130,12 @@ export interface reqAppShuttleCheckPriceTravelerV3 {
  * @link {{BASE_URL_SHUTTLE}}v3/app/order/check/price
  */
 export interface reqAppShuttleCheckPriceTravelokaV3 extends baseShuttleCheckPriceV2<baseShuttleCheckPriceUserBookingV3, reqAppShuttleCheckPriceTravelokaOrderDataV3> {
+    payment?: {
+        product: number;
+        method: string;
+        isAddict: 0 | 1;
+        voucherCode: string;
+    }
 }
 
 export interface reqAppShuttleCheckPriceTravelokaOrderDataV3 extends Pick<reqAppShuttleCheckPriceOrderDataV3, "departure" | "destination" | "scheduleCode" | "totalPrice"> {
