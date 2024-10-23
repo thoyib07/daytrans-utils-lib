@@ -90,10 +90,11 @@ export interface reqAppKuyCekTarifOrderListPackageV3 {
 export interface reqAppExpressOrderV3 {
   tokenData: string;
   paymentMethod: string;
-  isWallet: boolean;
+  // isWallet?: boolean;
   voucherCode: string;
-  voucherEventCode: string;
-  useCashback: boolean;
+  // voucherEventCode?: string;
+  useCashback: 0 | 1;
+  card?: string;
 }
 export interface reqAppExpressGetPriceOrderV3 {
   originCity: reqAppExpressGetPriceOrderOriginCityV3;
@@ -103,6 +104,15 @@ export interface reqAppExpressGetPriceOrderV3 {
   pickupType: string;
   dropType: string;
   salesChannel?: string;
+  payment?: {
+    firstMile: number;
+    lastMile: number;
+    backBone: number;
+    insurance: number;
+    method: string;
+    isAddict: 0 | 1;
+    voucherCode: string;
+  }
 }
 export interface reqAppExpressGetPriceOrderOriginCityV3 {
   subdistrictId: number;
@@ -116,31 +126,32 @@ export interface reqAppExpressGetPriceOrderOriginCityV3 {
 }
 export interface reqAppExpressGetPriceOrderDestinationCityV3 {
   counterId?: string;
-  isCounter: boolean;
+  isCounter: 0 | 1;
   insuranceFee: number;
   pickUpFee: number;
   shippingFee: number;
   deliveryFee: number;
   recipient: reqAppExpressGetPriceOrderDestinationCityRecipientV3;
-  item: reqAppExpressGetPriceOrderDestinationCityItemsV3[];
+  items: reqAppExpressGetPriceOrderDestinationCityItemsV3[];
 }
 export interface reqAppExpressGetPriceOrderDestinationCityRecipientV3 {
   subdistrictId: number;
   address: string;
   latlng: string;
 
-  name?: string;
-  phone?: string;
+  name: string;
+  phone: string;
   note?: string;
 }
 export interface reqAppExpressGetPriceOrderDestinationCityItemsV3 {
+  uniqueCode?: string;
   descriptionItem: string;
   weight: number;
   qty: number;
   dimensions: string;
-  packageTypeId: string;
+  packageTypeId: number;
   packageType: string;
-  sizeItemId: string;
+  sizeItemId: number;
   sizeItem: string;
   insuranceFlag: number;
   itemValue: number;
